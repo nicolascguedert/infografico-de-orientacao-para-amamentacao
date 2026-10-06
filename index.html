@@ -14,6 +14,7 @@
   --vm:#c0392b; --vm-cl:#fdeceb;
   --am:#e08b00; --am-cl:#fff6e3;
   --az:#1565c0; --az-cl:#e9f1fb;
+  --rs:#e8558e; --rs-cl:#fdeaf2;
   --tx:#2f2a34; --tx2:#7d7589; --bd:#ece6f0; --bg:#fff;
   --pad:clamp(14px,4vw,48px);
   --col:min(100%,1180px);
@@ -26,7 +27,7 @@ body{font-family:'Exo',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-s
 a{color:inherit;text-decoration:none}
 .app{width:100%;min-height:100vh;min-height:100dvh;background:#fff}
 
-/* ===== TOPO ===== */
+/* TOPO */
 .top{background:linear-gradient(135deg,var(--rx) 0%,var(--rx2) 100%);color:#fff;
   padding:clamp(13px,1.6vw,24px) var(--pad);position:sticky;top:0;z-index:99;
   box-shadow:0 2px 16px rgba(121,75,158,.25)}
@@ -35,11 +36,10 @@ a{color:inherit;text-decoration:none}
 .top .ttl small{display:block;font-size:clamp(10px,0.3vw + 9px,14px);
   opacity:.85;font-weight:400;margin-top:2px}
 
-/* ===== TELAS — COLUNA ÚNICA CENTRALIZADA ===== */
+/* TELAS — COLUNA ÚNICA CENTRALIZADA */
 .tl{display:none;padding:clamp(18px,2.2vw,42px) var(--pad) clamp(100px,9vw,130px)}
 .tl.on{display:block;animation:fd .3s ease}
 @keyframes fd{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
-/* TODOS os blocos respeitam a mesma coluna */
 .tl > *{width:100%;max-width:var(--col);margin-left:auto;margin-right:auto}
 
 h2{font-size:clamp(24px,2.4vw + 14px,54px);font-weight:900;line-height:1.08;
@@ -50,7 +50,7 @@ h2{font-size:clamp(24px,2.4vw + 14px,54px);font-weight:900;line-height:1.08;
   text-transform:uppercase;color:var(--rx2);margin:clamp(26px,3vw,48px) 0 14px;
   padding-bottom:8px;border-bottom:2px solid var(--bd)}
 
-/* ===== SLOT DE IMAGEM ===== */
+/* SLOT DE IMAGEM */
 .slot{background:repeating-linear-gradient(45deg,#faf7fc,#faf7fc 13px,#f3ecf7 13px,#f3ecf7 26px);
   border:3px dashed #d9c9e3;border-radius:18px;display:flex;flex-direction:column;
   align-items:center;justify-content:center;text-align:center;gap:5px;
@@ -61,13 +61,11 @@ h2{font-size:clamp(24px,2.4vw + 14px,54px);font-weight:900;line-height:1.08;
 .s1{min-height:clamp(120px,13vw,230px)}
 .s2{min-height:clamp(170px,18vw,320px)}
 img.foto{width:100%;border-radius:18px;margin-bottom:18px;display:block}
-
-/* grade de 4 slots quadrados */
 .quad{display:grid;gap:clamp(10px,1vw,18px);
   grid-template-columns:repeat(auto-fit,minmax(clamp(130px,14vw,250px),1fr));margin-bottom:16px}
 .quad .slot{margin-bottom:0;aspect-ratio:1/1;min-height:unset;padding:12px}
 
-/* ===== MENU ===== */
+/* MENU */
 .grupo{margin-bottom:clamp(22px,2.6vw,44px)}
 .grupo .gtit{display:flex;align-items:center;gap:10px;margin-bottom:12px}
 .grupo .gnum{width:clamp(26px,1.4vw + 18px,42px);height:clamp(26px,1.4vw + 18px,42px);
@@ -89,7 +87,7 @@ img.foto{width:100%;border-radius:18px;margin-bottom:18px;display:block}
 .mb .s{font-size:clamp(11px,0.28vw + 10px,16px);color:var(--tx2);line-height:1.3;
   display:block;font-weight:500}
 
-/* ===== MATERIAL OFICIAL / EMERGÊNCIA ===== */
+/* MATERIAL OFICIAL / EMERGÊNCIA */
 .oficial{margin-top:clamp(22px,2.6vw,44px)}
 .emerg{margin-top:clamp(28px,3vw,52px);padding-top:clamp(22px,2.2vw,38px);
   border-top:3px solid var(--bd)}
@@ -105,7 +103,7 @@ img.foto{width:100%;border-radius:18px;margin-bottom:18px;display:block}
   display:flex;align-items:center;justify-content:center;gap:10px}
 .btn-emerg:active{transform:scale(.98)}
 
-/* ===== CAIXAS ===== */
+/* CAIXAS */
 .cx{border-radius:18px;padding:clamp(15px,1.6vw,30px);margin-bottom:16px;border-left:6px solid}
 .cx .ti{font-weight:800;margin-bottom:9px;font-size:clamp(15px,0.45vw + 13px,24px);line-height:1.3}
 .cx p{margin-bottom:10px;font-size:clamp(14px,0.38vw + 13px,21px)}
@@ -116,7 +114,7 @@ img.foto{width:100%;border-radius:18px;margin-bottom:18px;display:block}
 .inf{background:var(--az-cl);border-color:var(--az)} .inf .ti{color:var(--az)}
 .rox{background:var(--lil-cl);border-color:var(--rx2)} .rox .ti{color:var(--rx)}
 
-/* ===== MITO ===== */
+/* MITO */
 .mito{border-radius:20px;overflow:hidden;margin-bottom:18px;border:3px solid var(--rx2)}
 .mito .cab{background:var(--rx);color:#fff;padding:clamp(14px,1.5vw,28px);
   font-size:clamp(17px,0.6vw + 15px,30px);font-weight:900;text-align:center;line-height:1.25}
@@ -125,21 +123,48 @@ img.foto{width:100%;border-radius:18px;margin-bottom:18px;display:block}
 .mito .corpo{background:var(--lil-cl);padding:clamp(15px,1.6vw,30px)}
 .mito .corpo p{margin-bottom:10px;font-size:clamp(14px,0.38vw + 13px,21px)}
 .mito .corpo p:last-child{margin-bottom:0}
-.mito .nota{background:#fff;border-radius:14px;padding:clamp(13px,1.4vw,26px);
-  margin-top:14px;border-left:5px solid var(--vd)}
-.mito .nota b{display:block;color:var(--vd);font-weight:800;
-  font-size:clamp(14px,0.4vw + 12px,22px);margin-bottom:7px}
-.mito .nota ul{list-style:none;font-size:clamp(13px,0.38vw + 12px,20px)}
-.mito .nota li{padding:6px 0 6px 24px;position:relative;line-height:1.4}
-.mito .nota li::before{content:'✓';position:absolute;left:0;top:6px;
-  color:var(--vd);font-weight:900;font-size:16px}
-.mito .alerta{background:var(--am-cl);border-radius:14px;
-  padding:clamp(13px,1.4vw,26px);margin-top:12px;border-left:5px solid var(--am)}
-.mito .alerta b{display:block;color:#9a6100;font-weight:800;
-  font-size:clamp(14px,0.4vw + 12px,22px);margin-bottom:5px}
-.mito .alerta span{font-size:clamp(13px,0.38vw + 12px,20px);line-height:1.45;display:block}
 
-/* ===== GRADE DE ÍCONES ===== */
+/* ===== BLOCO "O QUE PODE PREVENIR?" ===== */
+.prev{display:grid;grid-template-columns:1fr;border-radius:20px;overflow:hidden;
+  margin-top:16px;border:3px solid var(--rx)}
+@media(min-width:620px){.prev{grid-template-columns:minmax(150px,26%) 1fr}}
+.prev .lado{background:var(--rx);color:#fff;display:flex;align-items:center;
+  justify-content:center;padding:clamp(16px,1.8vw,30px);text-align:center;
+  font-weight:900;font-size:clamp(17px,0.6vw + 15px,28px);line-height:1.2}
+.prev .conteudo{background:#fff;padding:clamp(16px,1.8vw,30px)}
+.prev .item{margin-bottom:16px}
+.prev .item:last-child{margin-bottom:0}
+.prev .item b{display:block;color:var(--rx);font-weight:800;
+  font-size:clamp(14px,0.42vw + 12px,22px);margin-bottom:4px}
+.prev .item span{display:block;font-size:clamp(13px,0.38vw + 12px,20px);line-height:1.45}
+
+/* ===== FASES DO LEITE ===== */
+.fases{display:grid;gap:clamp(12px,1.4vw,24px);
+  grid-template-columns:repeat(auto-fit,minmax(clamp(150px,27vw,280px),1fr));
+  background:var(--rx);border-radius:24px;padding:clamp(16px,2vw,34px);margin-bottom:18px}
+.fase{background:var(--rx2);border-radius:18px;padding:clamp(12px,1.4vw,22px);
+  text-align:center;color:#fff;display:flex;flex-direction:column;align-items:center}
+.garrafa{width:clamp(54px,8vw,92px);margin:0 auto clamp(12px,1.4vw,20px);
+  display:flex;flex-direction:column;align-items:center}
+.garrafa .tampa{width:62%;height:clamp(10px,1.3vw,18px);background:#5e3680;
+  border-radius:5px 5px 2px 2px}
+.garrafa .gargalo{width:46%;height:clamp(12px,1.5vw,20px);
+  border-left:3px solid rgba(255,255,255,.55);border-right:3px solid rgba(255,255,255,.55)}
+.garrafa .corpo{width:100%;height:clamp(74px,11vw,130px);border-radius:14px 14px 10px 10px;
+  border:3px solid rgba(255,255,255,.6);position:relative;overflow:hidden}
+.garrafa .corpo::after{content:'';position:absolute;left:6%;top:8%;width:16%;height:70%;
+  background:rgba(255,255,255,.35);border-radius:40px}
+.g1 .corpo{background:#f2e3a8}
+.g2 .corpo{background:#f7f1dc}
+.g3 .corpo{background:#fdfdf8}
+.fase .nm{font-weight:900;font-size:clamp(13px,0.4vw + 11px,21px);
+  text-transform:uppercase;letter-spacing:.5px;margin-bottom:8px;line-height:1.2}
+.fase .dia{font-weight:800;font-size:clamp(12px,0.32vw + 11px,18px);display:block;margin-bottom:3px}
+.fase .ds{font-size:clamp(11px,0.3vw + 10px,17px);line-height:1.4;display:block;
+  opacity:.95;margin-bottom:10px}
+.fase .ds:last-child{margin-bottom:0}
+
+/* GRADE DE ÍCONES */
 .gr{display:grid;gap:clamp(10px,1vw,18px);
   grid-template-columns:repeat(auto-fit,minmax(clamp(100px,11vw,190px),1fr))}
 .ic{border-radius:18px;padding:clamp(15px,1.5vw,26px) 9px;text-align:center;border:3px solid;
@@ -153,7 +178,7 @@ img.foto{width:100%;border-radius:18px;margin-bottom:18px;display:block}
 .i-rx{background:var(--lil-cl);border-color:var(--rx2)} .i-rx .n{color:var(--rx)}
 .i-at{background:var(--am-cl);border-color:var(--am)} .i-at .n{color:#9a6100}
 
-/* ===== NÚMERO GIGANTE ===== */
+/* NÚMERO GIGANTE */
 .mega{text-align:center;padding:clamp(24px,2.4vw,48px) 16px;border-radius:24px;
   margin-bottom:18px;background:var(--lil-cl);border:3px solid var(--rx2)}
 .mega .n{font-size:clamp(60px,6vw,140px);font-weight:900;line-height:.85;
@@ -161,24 +186,47 @@ img.foto{width:100%;border-radius:18px;margin-bottom:18px;display:block}
 .mega .u{font-size:clamp(16px,0.8vw + 13px,34px);font-weight:800;margin-top:10px;color:var(--rx)}
 .mega .l{font-size:clamp(13px,0.38vw + 12px,20px);margin-top:9px;color:var(--tx2);font-weight:500}
 
-/* ===== ESTÔMAGO DO BEBÊ (largura limitada) ===== */
+/* ===== ESTÔMAGO DO BEBÊ ===== */
 .estomago{display:grid;gap:clamp(8px,0.8vw,16px);
-  grid-template-columns:repeat(4,1fr);margin:0 auto 16px;align-items:end;
-  max-width:620px}
-.est{text-align:center;background:var(--lil-cl);border-radius:16px;
-  padding:clamp(10px,1vw,18px) 4px;border:2.5px solid var(--rx2);
+  grid-template-columns:repeat(auto-fit,minmax(clamp(120px,22vw,190px),1fr));
+  margin:0 auto 16px;align-items:end;max-width:820px}
+.est{text-align:center;background:var(--rx);border-radius:18px;
+  padding:clamp(12px,1.3vw,22px) 8px;color:#fff;
   display:flex;flex-direction:column;justify-content:flex-end;gap:6px}
 .est .fruta{display:flex;align-items:flex-end;justify-content:center;
-  height:clamp(52px,9vw,96px);line-height:1}
-.est .f1{font-size:clamp(15px,2.4vw,26px)}
-.est .f2{font-size:clamp(24px,3.8vw,42px)}
-.est .f3{font-size:clamp(32px,5vw,56px)}
-.est .f4{font-size:clamp(42px,6.5vw,72px)}
-.est .q{font-weight:900;color:var(--rx);font-size:clamp(12px,0.3vw + 11px,17px);display:block}
-.est .i{font-size:clamp(10px,0.25vw + 9px,14px);color:var(--tx2);display:block;
-  font-weight:600;line-height:1.25}
+  height:clamp(56px,9vw,104px);line-height:1}
+.est .f1{font-size:clamp(17px,2.6vw,30px)}
+.est .f2{font-size:clamp(27px,4.2vw,48px)}
+.est .f3{font-size:clamp(36px,5.6vw,64px)}
+.est .f4{font-size:clamp(46px,7vw,82px)}
+.est .q{font-weight:900;font-size:clamp(13px,0.35vw + 12px,21px);display:block;line-height:1.2}
+.est .ml{font-weight:800;font-size:clamp(12px,0.32vw + 11px,19px);display:block;
+  color:#f3d9ff;line-height:1.2}
+.est .i{font-size:clamp(10px,0.28vw + 9px,15px);display:block;
+  font-weight:500;line-height:1.25;opacity:.9;margin-top:3px}
 
-/* ===== CONDIÇÃO (quando dói) ===== */
+/* ===== CARTÕES DE SUBSTÂNCIA ===== */
+.subs{display:grid;gap:clamp(10px,1vw,18px);
+  grid-template-columns:repeat(auto-fit,minmax(clamp(150px,24vw,300px),1fr));margin-bottom:16px}
+.sb{border-radius:18px;overflow:hidden;border:3px solid}
+.sb .nome{padding:clamp(11px,1.2vw,20px) clamp(12px,1.2vw,20px);
+  font-weight:900;font-size:clamp(14px,0.4vw + 12px,22px);color:#fff;line-height:1.2}
+.sb .corpo{background:#fff;padding:clamp(11px,1.2vw,20px)}
+.sb .rot{font-size:clamp(10px,0.26vw + 9px,14px);font-weight:800;letter-spacing:1px;
+  text-transform:uppercase;color:var(--tx2);margin-bottom:3px}
+.sb .val{font-size:clamp(13px,0.36vw + 12px,20px);font-weight:700;line-height:1.35}
+.sb-no{border-color:var(--vm)} .sb-no .nome{background:var(--vm)} .sb-no .val{color:var(--vm)}
+.sb-at{border-color:var(--am)} .sb-at .nome{background:var(--am)} .sb-at .val{color:#9a6100}
+.nivel{display:flex;align-items:center;gap:10px;margin:clamp(22px,2.4vw,38px) 0 12px}
+.nivel .bola{width:clamp(22px,2vw,34px);height:clamp(22px,2vw,34px);border-radius:50%;flex-shrink:0}
+.nivel .tx{font-weight:900;font-size:clamp(14px,0.42vw + 12px,22px);line-height:1.2}
+.n-no .bola{background:var(--vm)} .n-no .tx{color:var(--vm)}
+.n-at .bola{background:var(--am)} .n-at .tx{color:#9a6100}
+.fonte{font-size:clamp(11px,0.3vw + 10px,16px);color:var(--tx2);line-height:1.5;
+  background:var(--lil-cl);border-radius:14px;padding:clamp(13px,1.4vw,24px);margin-bottom:16px}
+.fonte b{color:var(--rx)}
+
+/* CONDIÇÃO */
 .cond{border-radius:22px;overflow:hidden;margin-bottom:20px;border:3px solid}
 .cond .cab{padding:clamp(16px,1.7vw,32px);display:flex;align-items:center;gap:16px}
 .cond .cab .e{font-size:clamp(38px,2.6vw + 26px,78px);line-height:1;flex-shrink:0}
@@ -198,7 +246,7 @@ img.foto{width:100%;border-radius:18px;margin-bottom:18px;display:block}
 .c-vm{border-color:var(--vm)} .c-vm .cab{background:var(--vm-cl)} .c-vm .cab b{color:var(--vm)}
 .c-vm li::before{color:var(--vm)}
 
-/* ===== TIMELINE ===== */
+/* TIMELINE */
 .tm{position:relative;padding-left:clamp(40px,3vw,70px);margin:6px 0 18px}
 .tm::before{content:'';position:absolute;left:clamp(15px,1.1vw,27px);top:12px;bottom:12px;
   width:4px;background:linear-gradient(180deg,var(--rx),var(--lil));border-radius:4px}
@@ -213,7 +261,7 @@ img.foto{width:100%;border-radius:18px;margin-bottom:18px;display:block}
   font-size:clamp(13px,0.38vw + 12px,20px)}
 .tm-i .c p{margin:0}
 
-/* ===== COMPARAÇÃO ===== */
+/* COMPARAÇÃO */
 .duo{display:grid;gap:clamp(11px,1.1vw,22px);grid-template-columns:1fr;margin-bottom:18px}
 @media(min-width:560px){.duo{grid-template-columns:1fr 1fr}}
 .cl{border-radius:20px;padding:clamp(14px,1.5vw,28px);border:3px solid}
@@ -228,7 +276,7 @@ img.foto{width:100%;border-radius:18px;margin-bottom:18px;display:block}
 .cl.ok li::before{content:'✓';color:var(--vd)}
 .cl.at li::before{content:'!';color:var(--am)}
 
-/* ===== FAIXA ===== */
+/* FAIXA */
 .fx{border-radius:18px;padding:clamp(15px,1.6vw,30px);margin-bottom:16px;
   display:flex;gap:16px;align-items:flex-start}
 .fx .e{font-size:clamp(28px,1.9vw + 18px,60px);line-height:1;flex-shrink:0}
@@ -240,18 +288,15 @@ img.foto{width:100%;border-radius:18px;margin-bottom:18px;display:block}
 .f-a{background:var(--am-cl)} .f-a b{color:#9a6100}
 .f-z{background:var(--az-cl)} .f-z b{color:var(--az)}
 
-/* ===== LISTA ===== */
+/* LISTA */
 .li{list-style:none;margin-bottom:16px}
 .li li{padding:11px 0 11px 33px;position:relative;
   border-bottom:1px solid var(--bd);font-size:clamp(14px,0.38vw + 13px,21px);line-height:1.4}
 .li li:last-child{border-bottom:none}
 .li li::before{position:absolute;left:0;top:11px;font-size:18px}
-.sim li::before{content:'✅'}
-.nao li::before{content:'🚫'}
-.avi li::before{content:'⚠️'}
 .pto li::before{content:'●';color:var(--rx2);font-size:15px;top:12px;font-weight:900}
 
-/* ===== BARRAS ===== */
+/* BARRAS */
 .gf{background:#fff;border:2.5px solid var(--bd);border-radius:20px;
   padding:clamp(15px,1.6vw,30px);margin-bottom:18px}
 .gf h4{font-size:clamp(15px,0.45vw + 13px,24px);font-weight:800;margin-bottom:4px;color:var(--rx)}
@@ -259,8 +304,8 @@ img.foto{width:100%;border-radius:18px;margin-bottom:18px;display:block}
 .br{margin-bottom:15px} .br:last-child{margin-bottom:0}
 .br .t{display:flex;justify-content:space-between;align-items:center;margin-bottom:6px;
   font-size:clamp(12px,0.32vw + 11px,19px);font-weight:700}
-.br .bx{height:clamp(30px,2.6vw,50px);background:#f2edf6;border-radius:11px;overflow:hidden}
-.br .bx i{display:flex;height:100%;border-radius:11px;font-style:normal;
+.br .box{height:clamp(30px,2.6vw,50px);background:#f2edf6;border-radius:11px;overflow:hidden}
+.br .box i{display:flex;height:100%;border-radius:11px;font-style:normal;
   align-items:center;padding-left:14px;color:#fff;font-weight:800;
   font-size:clamp(11px,0.3vw + 10px,18px);animation:gw .9s cubic-bezier(.2,.8,.3,1)}
 @keyframes gw{from{width:0!important}}
@@ -269,7 +314,7 @@ img.foto{width:100%;border-radius:18px;margin-bottom:18px;display:block}
 .b-r{background:linear-gradient(90deg,#e06a5c,var(--vm))}
 .b-a{background:linear-gradient(90deg,#f0b24d,var(--am))}
 
-/* ===== RODAPÉ FIXO ===== */
+/* RODAPÉ FIXO */
 .nv{position:fixed;bottom:0;left:0;right:0;width:100%;
   background:rgba(255,255,255,.98);border-top:2px solid var(--bd);
   padding:clamp(10px,1vw,18px) var(--pad);
@@ -284,7 +329,7 @@ img.foto{width:100%;border-radius:18px;margin-bottom:18px;display:block}
 .n-volta.on{visibility:visible}
 .n-inicio{background:var(--rx);color:#fff}
 
-/* ===== CONTATO ===== */
+/* CONTATO */
 .ct{display:grid;gap:clamp(12px,1.1vw,20px);
   grid-template-columns:repeat(auto-fit,minmax(clamp(150px,16vw,280px),1fr));margin-bottom:16px}
 .ct a,.ct div.b{background:var(--lil-cl);border-radius:18px;
@@ -299,7 +344,7 @@ img.foto{width:100%;border-radius:18px;margin-bottom:18px;display:block}
 .ct .toque{display:block;font-size:clamp(10px,0.28vw + 9px,15px);color:var(--rx2);
   font-weight:700;margin-top:6px}
 
-/* ===== LINK-BOTÃO ===== */
+/* LINK-BOTÃO */
 .lnk{display:flex;align-items:center;gap:16px;
   background:#fff;border:2.5px solid var(--bd);border-radius:18px;
   padding:clamp(15px,1.6vw,30px);margin-bottom:12px;transition:.18s;cursor:pointer}
@@ -313,7 +358,7 @@ img.foto{width:100%;border-radius:18px;margin-bottom:18px;display:block}
 .lnk .seta{font-size:clamp(20px,1.2vw,34px);color:var(--rx2);flex-shrink:0;font-weight:900}
 .lnk-dest{background:var(--lil-cl);border-color:var(--rx2)}
 
-/* ===== MAPA ===== */
+/* MAPA */
 .mapa{border-radius:18px;overflow:hidden;border:2.5px solid var(--lil);
   margin-bottom:12px;background:var(--lil-cl)}
 .mapa iframe{width:100%;height:clamp(180px,22vw,420px);border:0;display:block}
@@ -346,6 +391,8 @@ img.foto{width:100%;border-radius:18px;margin-bottom:18px;display:block}
     <div class="menu">
       <button class="mb" onclick="ir('t1')"><span class="e">🤱</span>
         <span class="n">Primeiros dias</span><span class="s">A descida do leite</span></button>
+      <button class="mb" onclick="ir('t14')"><span class="e">🍼</span>
+        <span class="n">Fases do leite</span><span class="s">Colostro até leite maduro</span></button>
       <button class="mb" onclick="ir('t3')"><span class="e">👶</span>
         <span class="n">A pega</span><span class="s">Como saber se está boa</span></button>
       <button class="mb" onclick="ir('t5')"><span class="e">🩹</span>
@@ -362,7 +409,7 @@ img.foto{width:100%;border-radius:18px;margin-bottom:18px;display:block}
         <span class="n">Sono do bebê</span><span class="s">O que é normal</span></button>
       <button class="mb" onclick="ir('t8')"><span class="e">💧</span>
         <span class="n">Leite que volta</span><span class="s">Quando põe leite para fora</span></button>
-      <button class="mb" onclick="ir('t6')"><span class="e">🍼</span>
+      <button class="mb" onclick="ir('t6')"><span class="e">🤲</span>
         <span class="n">Tirar o leite</span><span class="s">Ordenha e armazenamento</span></button>
     </div>
   </div>
@@ -451,6 +498,65 @@ img.foto{width:100%;border-radius:18px;margin-bottom:18px;display:block}
     <div class="c"><b>Cada família tem sua história</b>
       <span>Costumes e saberes passados de geração em geração fazem parte do cuidado.
       Converse com a equipe sobre eles — ninguém vai julgar você.</span></div></div>
+
+  <button class="mb" style="background:var(--rx);border-color:var(--rx)" onclick="ir('t14')">
+    <span class="n" style="color:#fff">Conheça as fases do leite →</span></button>
+</section>
+
+<!-- ══════════ 14 · FASES DO LEITE ══════════ -->
+<section class="tl" id="t14">
+  <h2>Fases do leite</h2>
+  <p class="sub">O leite muda conforme o bebê cresce — e isso é certo.</p>
+
+  <div class="fases">
+    <div class="fase g1">
+      <div class="garrafa">
+        <div class="tampa"></div><div class="gargalo"></div><div class="corpo"></div>
+      </div>
+      <div class="nm">Colostro</div>
+      <span class="dia">Do 1º ao 6º dia</span>
+      <span class="ds">Rico em proteínas e anticorpos</span>
+      <span class="ds">Mais amarelado e transparente</span>
+    </div>
+    <div class="fase g2">
+      <div class="garrafa">
+        <div class="tampa"></div><div class="gargalo"></div><div class="corpo"></div>
+      </div>
+      <div class="nm">Leite de transição</div>
+      <span class="dia">Do 6º ao 14º dia</span>
+      <span class="ds">Rico em nutrientes e gordura</span>
+      <span class="ds">Mais denso e volumoso</span>
+    </div>
+    <div class="fase g3">
+      <div class="garrafa">
+        <div class="tampa"></div><div class="gargalo"></div><div class="corpo"></div>
+      </div>
+      <div class="nm">Leite maduro</div>
+      <span class="dia">Do 15º dia em diante</span>
+      <span class="ds">Contém todos os nutrientes</span>
+      <span class="ds">Mais consistente e esbranquiçado</span>
+    </div>
+  </div>
+
+  <div class="mito">
+    <div class="cab"><small>PERGUNTA COMUM</small>Existe leite fraco?</div>
+    <div class="corpo">
+      <p><strong>Não existe leite fraco.</strong> A aparência, a cor ou o sabor
+      do leite materno não determinam sua qualidade.</p>
+      <p>O leite materno é produzido com calorias, nutrientes, vitaminas, sais minerais,
+      anticorpos e água <strong>nas quantidades adequadas para o seu bebê</strong>.</p>
+    </div>
+  </div>
+
+  <div class="fx f-rx"><span class="e">🫗</span>
+    <div class="c"><b>O peito não é um reservatório</b>
+      <span>Ele não guarda leite esperando a hora. <strong>Quando o bebê mama,
+      o leite é produzido e liberado na hora.</strong></span></div></div>
+
+  <div class="slot s1">
+    <div class="i">📷</div><div class="n">FASES DO LEITE</div>
+    <div class="d">Três frascos lado a lado mostrando a diferença de cor — 1000 × 600 px</div>
+  </div>
 </section>
 
 <!-- ══════════ 2 · MITOS ══════════ -->
@@ -484,24 +590,31 @@ img.foto{width:100%;border-radius:18px;margin-bottom:18px;display:block}
     <div class="corpo">
       <p>A amamentação <strong>não é a causa</strong> da flacidez. As mudanças
       de tamanho e volume que acontecem na gravidez é que contribuem para isso.</p>
+    </div>
+  </div>
 
-      <div class="nota">
-        <b>O que ajuda de verdade</b>
-        <ul>
-          <li><strong>Sutiã firme</strong>, com alças largas e boa sustentação</li>
-          <li><strong>Manter o peso estável</strong> — preserva a elasticidade da pele</li>
-        </ul>
+  <div class="prev">
+    <div class="lado">O que pode prevenir?</div>
+    <div class="conteudo">
+      <div class="item">
+        <b>Usar sutiã confortável e com boa sustentação</b>
+        <span>Ajuda a distribuir o peso uniformemente, prevenindo dores nas costas,
+        ombros e pescoço, além de manter as mamas firmes e reduzir o estiramento da pele.</span>
       </div>
-
-      <div class="alerta">
-        <b>⚠️ Cuidado com sutiã apertado</b>
-        <span>Sutiãs muito justos comprimem os ductos e podem causar
-        entupimento, inflamação e até infecção.</span>
+      <div class="item">
+        <b>Manter um peso saudável</b>
+        <span>Evitar ganhos e perdas de peso excessivos pode ajudar a manter
+        a elasticidade da pele.</span>
       </div>
     </div>
   </div>
 
-  <div class="mito">
+  <div class="fx f-a" style="margin-top:16px"><span class="e">⚠️</span>
+    <div class="c"><b>Cuidado com sutiã apertado</b>
+      <span>Sutiãs muito justos comprimem os ductos e podem causar entupimento,
+      inflamação e até infecção.</span></div></div>
+
+  <div class="mito" style="margin-top:20px">
     <div class="cab"><small>MITO</small>"O peito é um reservatório"</div>
     <div class="corpo">
       <p>O peito <strong>não guarda</strong> leite esperando a hora.
@@ -540,7 +653,7 @@ img.foto{width:100%;border-radius:18px;margin-bottom:18px;display:block}
   <div class="sec">Como é a pega</div>
   <div class="slot s2">
     <div class="i">📷</div><div class="n">ILUSTRAÇÃO DA PEGA</div>
-    <div class="d">Boca aberta, aréola na boca, queixo no peito — 1000 × 700 px</div>
+    <div class="d">Boca aberta, aréola na boca, queixo no peito, nariz livre — 1000 × 700 px</div>
   </div>
 
   <div class="duo">
@@ -550,6 +663,7 @@ img.foto{width:100%;border-radius:18px;margin-bottom:18px;display:block}
         <li>Boca bem aberta</li>
         <li>Pega quase toda a aréola</li>
         <li>Queixo encostado no peito</li>
+        <li><strong>Nariz livre</strong>, afastado do peito</li>
         <li>Lábio de baixo virado para fora</li>
         <li>Dá para ouvir engolindo</li>
         <li>Não dói</li>
@@ -560,6 +674,7 @@ img.foto{width:100%;border-radius:18px;margin-bottom:18px;display:block}
       <ul>
         <li>Boca pouco aberta</li>
         <li>Pega só o bico</li>
+        <li>Nariz encostado ou abafado no peito</li>
         <li>Bochecha encovada</li>
         <li>Barulho de estalo</li>
         <li>Bico sai achatado</li>
@@ -567,6 +682,11 @@ img.foto{width:100%;border-radius:18px;margin-bottom:18px;display:block}
       </ul>
     </div>
   </div>
+
+  <div class="fx f-v"><span class="e">👃</span>
+    <div class="c"><b>O nariz precisa ficar livre</b>
+      <span>O bebê respira pelo nariz enquanto mama. Se ele estiver encostado no peito,
+      reposicione o corpo do bebê mais colado a você — não afaste a mama com o dedo.</span></div></div>
 
   <div class="fx f-v"><span class="e">🔄</span>
     <div class="c"><b>Dá para corrigir</b>
@@ -592,16 +712,24 @@ img.foto{width:100%;border-radius:18px;margin-bottom:18px;display:block}
     <div class="estomago">
       <div class="est">
         <div class="fruta"><span class="f1">🍒</span></div>
-        <span class="q">1º dia</span><span class="i">cereja</span></div>
+        <span class="q">1 dia</span>
+        <span class="ml">5–7 mL</span>
+        <span class="i">tamanho de uma cereja</span></div>
       <div class="est">
         <div class="fruta"><span class="f2">🌰</span></div>
-        <span class="q">3 dias</span><span class="i">noz</span></div>
+        <span class="q">3 dias</span>
+        <span class="ml">22–27 mL</span>
+        <span class="i">tamanho de uma noz</span></div>
       <div class="est">
-        <div class="fruta"><span class="f3">🥚</span></div>
-        <span class="q">1 semana</span><span class="i">ovo</span></div>
+        <div class="fruta"><span class="f3">🍑</span></div>
+        <span class="q">1 semana</span>
+        <span class="ml">45–60 mL</span>
+        <span class="i">tamanho de um pêssego</span></div>
       <div class="est">
-        <div class="fruta"><span class="f4">🍋</span></div>
-        <span class="q">1 mês</span><span class="i">limão</span></div>
+        <div class="fruta"><span class="f4">🥚</span></div>
+        <span class="q">1 mês</span>
+        <span class="ml">80–150 mL</span>
+        <span class="i">tamanho de um ovo grande</span></div>
     </div>
     <p style="font-size:clamp(12px,0.3vw + 11px,18px);color:var(--tx2);margin:0;text-align:center">
       Os desenhos estão <strong>na proporção real</strong> do crescimento do estômago.</p>
@@ -738,10 +866,10 @@ img.foto{width:100%;border-radius:18px;margin-bottom:18px;display:block}
     <p class="lg">Muito mais curto que o do adulto</p>
     <div class="br"><div class="t"><span>👶 Bebê</span>
       <span style="color:var(--rx)">40 a 50 min</span></div>
-      <div class="bx"><i class="b-rx" style="width:32%">ciclo curto</i></div></div>
+      <div class="box"><i class="b-rx" style="width:32%">ciclo curto</i></div></div>
     <div class="br"><div class="t"><span>🧑 Adulto</span>
       <span style="color:var(--tx2)">90 a 120 min</span></div>
-      <div class="bx"><i class="b-a" style="width:85%">ciclo longo</i></div></div>
+      <div class="box"><i class="b-a" style="width:85%">ciclo longo</i></div></div>
     <p style="font-size:clamp(12px,0.3vw + 11px,18px);color:var(--tx2);margin:14px 0 0">
       Por isso o bebê desperta várias vezes — <strong>é esperado</strong>,
       acontece brevemente ao fim de cada ciclo.</p>
@@ -811,12 +939,12 @@ img.foto{width:100%;border-radius:18px;margin-bottom:18px;display:block}
 
 <!-- ══════════ 9 · ÁLCOOL E REMÉDIOS ══════════ -->
 <section class="tl" id="t9">
-  <h2>Álcool e remédios</h2>
-  <p class="sub">Muitas substâncias passam para o leite.</p>
+  <h2>Álcool, remédios e outras substâncias</h2>
+  <p class="sub">Muitas substâncias passam para o leite materno.</p>
 
   <div class="cx at">
-    <div class="ti">⚠️ Por que importa</div>
-    <p>Álcool, medicamentos e outras drogas <strong>passam para o leite materno</strong>
+    <div class="ti">⚠️ Por que isso importa</div>
+    <p>Álcool, medicamentos e outras drogas <strong>são excretados no leite materno</strong>
     e podem apresentar riscos para o bebê.</p>
   </div>
 
@@ -825,13 +953,83 @@ img.foto{width:100%;border-radius:18px;margin-bottom:18px;display:block}
       <span>Cada caso é avaliado individualmente. Contar permite que o uso seja
       acompanhado com segurança. <strong>Ninguém vai julgar você.</strong></span></div></div>
 
-  <div class="sec">Álcool</div>
-  <div class="cx rox">
-    <div class="ti">🍷 O corpo precisa de tempo</div>
-    <p>Depois de beber, o álcool leva algumas horas para sair completamente
-    do sangue — e do leite. <strong>Quanto maior a quantidade, mais tempo demora.</strong></p>
-    <p>Se for beber, converse antes com a equipe sobre quanto tempo esperar
-    para amamentar.</p>
+  <div class="sec">Substâncias com potencial de causar dependência</div>
+
+  <div class="nivel n-no"><div class="bola"></div>
+    <div class="tx">🚫 Uso contraindicado durante a amamentação</div></div>
+  <div class="subs">
+    <div class="sb sb-no">
+      <div class="nome">Cocaína e crack</div>
+      <div class="corpo">
+        <div class="rot">Se houve uso</div>
+        <div class="val">Suspender a amamentação por <strong>24 horas</strong></div>
+      </div>
+    </div>
+    <div class="sb sb-no">
+      <div class="nome">Inalantes</div>
+      <div class="corpo">
+        <div class="rot">Se houve uso</div>
+        <div class="val">Suspender a amamentação por <strong>7 dias</strong></div>
+      </div>
+    </div>
+    <div class="sb sb-no">
+      <div class="nome">Heroína</div>
+      <div class="corpo">
+        <div class="rot">Orientação</div>
+        <div class="val">Procure a equipe imediatamente</div>
+      </div>
+    </div>
+    <div class="sb sb-no">
+      <div class="nome">LSD</div>
+      <div class="corpo">
+        <div class="rot">Orientação</div>
+        <div class="val">Procure a equipe imediatamente</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="nivel n-at"><div class="bola"></div>
+    <div class="tx">⚠️ Uso possivelmente perigoso durante a amamentação</div></div>
+  <div class="subs">
+    <div class="sb sb-at">
+      <div class="nome">Álcool</div>
+      <div class="corpo">
+        <div class="rot">Se houve uso</div>
+        <div class="val">Esperar <strong>2 horas</strong> após uma dose*</div>
+      </div>
+    </div>
+    <div class="sb sb-at">
+      <div class="nome">Ayahuasca</div>
+      <div class="corpo">
+        <div class="rot">Se houve uso</div>
+        <div class="val">Suspender por <strong>17 a 40 horas</strong></div>
+      </div>
+    </div>
+    <div class="sb sb-at">
+      <div class="nome">Maconha e haxixe</div>
+      <div class="corpo">
+        <div class="rot">Orientação</div>
+        <div class="val">Converse com a equipe antes de amamentar</div>
+      </div>
+    </div>
+    <div class="sb sb-at">
+      <div class="nome">Anfetaminas</div>
+      <div class="corpo">
+        <div class="rot">Se houve uso</div>
+        <div class="val">Aguardar <strong>48 a 56 horas</strong><br>
+        <span style="font-weight:600;font-size:.9em;color:var(--tx2)">Evitar o uso recreacional</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="fonte">
+    <b>* Uma dose de bebida alcoólica</b> = 340 mL de cerveja, 140 mL de vinho
+    ou 40 mL de bebida destilada.<br><br>
+    Recomenda-se <strong>não ingerir nenhuma quantidade de bebida alcoólica</strong>
+    durante o período de lactação. Há evidências de redução do volume de leite materno
+    mesmo após o consumo de pequena quantidade.<br><br>
+    <b>Fonte:</b> Amamentação e uso de medicamentos e outras substâncias
+    (Ministério da Saúde, Brasil, 2025).
   </div>
 
   <div class="sec">Medicamentos</div>
@@ -842,10 +1040,9 @@ img.foto{width:100%;border-radius:18px;margin-bottom:18px;display:block}
       <span class="s">em toda consulta</span></div>
   </div>
 
-  <div class="fx f-r" style="margin-top:16px"><span class="e">🚭</span>
-    <div class="c"><b>Outras drogas</b>
-      <span>O uso de drogas durante a amamentação exige avaliação individual.
-      Procure a equipe — existe apoio disponível, e amamentar pode continuar
+  <div class="fx f-z" style="margin-top:16px"><span class="e">💜</span>
+    <div class="c"><b>Cada caso é avaliado individualmente</b>
+      <span>Procure a equipe — existe apoio disponível, e amamentar pode continuar
       sendo possível em muitos casos.</span></div></div>
 </section>
 
@@ -890,9 +1087,9 @@ img.foto{width:100%;border-radius:18px;margin-bottom:18px;display:block}
     <h4>Nem pouco, nem demais</h4>
     <p class="lg">Comparação ilustrativa — quem define é a equipe de saúde</p>
     <div class="br"><div class="t"><span>✅ Quantidade adequada</span></div>
-      <div class="bx"><i class="b-v" style="width:42%">certo</i></div></div>
+      <div class="box"><i class="b-v" style="width:42%">certo</i></div></div>
     <div class="br"><div class="t"><span>🚫 Muito acima do necessário</span></div>
-      <div class="bx"><i class="b-r" style="width:100%">excesso</i></div></div>
+      <div class="box"><i class="b-r" style="width:100%">excesso</i></div></div>
   </div>
 
   <div class="fx f-r"><span class="e">💧</span>
@@ -963,10 +1160,10 @@ img.foto{width:100%;border-radius:18px;margin-bottom:18px;display:block}
     <p class="lg">Mamadeira de leite no lugar da refeição tira a fome e o ferro</p>
     <div class="br"><div class="t"><span>🍽️ Comida nas refeições</span>
       <span style="color:var(--vd)">o principal</span></div>
-      <div class="bx"><i class="b-v" style="width:85%">prioridade</i></div></div>
+      <div class="box"><i class="b-v" style="width:85%">prioridade</i></div></div>
     <div class="br"><div class="t"><span>🥛 Leite</span>
       <span style="color:var(--am)">complemento</span></div>
-      <div class="bx"><i class="b-a" style="width:30%">menor</i></div></div>
+      <div class="box"><i class="b-a" style="width:30%">menor</i></div></div>
     <p style="font-size:clamp(12px,0.3vw + 11px,18px);color:var(--tx2);margin:14px 0 0">
       Leite em excesso nessa idade pode causar <strong>anemia</strong>.</p>
   </div>
@@ -1133,8 +1330,8 @@ var h=[],T={
  t0:'Amamentação',t1:'Os primeiros dias',t2:'Mitos e verdades',
  t3:'A pega',t4:'Quanto o bebê mama',t5:'Quando dói',
  t6:'Tirar o leite',t7:'O sono do bebê',t8:'Quando o leite volta',
- t9:'Álcool e remédios',t10:'Fórmula infantil',t11:'A comida chega',
- t12:'Procure a UBS',t13:'Contato'};
+ t9:'Álcool e substâncias',t10:'Fórmula infantil',t11:'A comida chega',
+ t12:'Procure a UBS',t13:'Contato',t14:'Fases do leite'};
 function ir(id,s){
   var a=document.querySelector('.tl.on');
   if(a&&!s&&a.id!==id)h.push(a.id);
