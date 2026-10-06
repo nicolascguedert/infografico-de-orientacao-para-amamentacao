@@ -1,0 +1,1127 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Amamentação: cultura, mitos e saberes</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Exo:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --rx:#794b9e; --rx2:#9b6cac; --lil:#e0bdec; --lil-cl:#f7effb;
+  --vd:#2e7d5b; --vd-cl:#e7f4ee;
+  --vm:#c0392b; --vm-cl:#fdeceb;
+  --am:#e08b00; --am-cl:#fff6e3;
+  --az:#1565c0; --az-cl:#e9f1fb;
+  --tx:#2f2a34; --tx2:#7d7589; --bd:#ece6f0; --bg:#f4f0f7;
+}
+*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+body{font-family:'Exo',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;
+  background:var(--bg);color:var(--tx);line-height:1.55;font-size:clamp(15px,2.7vw,17px)}
+.app{max-width:900px;margin:0 auto;background:#fff;min-height:100vh;
+  box-shadow:0 0 60px rgba(121,75,158,.12)}
+a{color:inherit;text-decoration:none}
+
+/* TOPO */
+.top{background:linear-gradient(135deg,var(--rx) 0%,var(--rx2) 100%);color:#fff;
+  padding:clamp(13px,2.8vw,18px) clamp(15px,3.2vw,24px);position:sticky;top:0;z-index:99;
+  box-shadow:0 2px 16px rgba(121,75,158,.25)}
+.top .ttl{font-size:clamp(14px,2.9vw,17px);font-weight:700;line-height:1.3}
+.top .ttl small{display:block;font-size:clamp(10px,2vw,12px);opacity:.85;font-weight:400;margin-top:2px}
+
+/* TELAS */
+.tl{display:none;padding:clamp(20px,4vw,36px) clamp(15px,3.5vw,32px) 100px}
+.tl.on{display:block;animation:fd .3s ease}
+@keyframes fd{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+
+h2{font-size:clamp(24px,6vw,40px);font-weight:900;line-height:1.1;
+  color:var(--rx);margin-bottom:8px;letter-spacing:-.5px}
+.sub{font-size:clamp(14px,3vw,18px);color:var(--tx2);margin-bottom:clamp(20px,4vw,30px);
+  font-weight:500;line-height:1.4}
+.sec{font-size:clamp(11px,2.3vw,13px);font-weight:800;letter-spacing:1.6px;
+  text-transform:uppercase;color:var(--rx2);margin:clamp(26px,5vw,38px) 0 14px;
+  padding-bottom:8px;border-bottom:2px solid var(--bd)}
+
+/* SLOT DE IMAGEM */
+.slot{background:repeating-linear-gradient(45deg,#faf7fc,#faf7fc 13px,#f3ecf7 13px,#f3ecf7 26px);
+  border:3px dashed #d9c9e3;border-radius:18px;display:flex;flex-direction:column;
+  align-items:center;justify-content:center;text-align:center;gap:5px;
+  padding:18px;margin-bottom:18px;color:#a893b5}
+.slot .i{font-size:clamp(26px,6vw,34px);opacity:.55;line-height:1}
+.slot .n{font-weight:800;font-size:clamp(11px,2.4vw,13px);letter-spacing:.6px;color:#8d7a9a}
+.slot .d{font-size:clamp(10px,2vw,11px);max-width:280px;line-height:1.4}
+.s1{min-height:clamp(120px,24vw,160px)}
+.s2{min-height:clamp(160px,32vw,230px)}
+img.foto{width:100%;border-radius:18px;margin-bottom:18px;display:block}
+
+/* GRADE DE 4 SLOTS QUADRADOS */
+.quad{display:grid;gap:clamp(10px,2.2vw,14px);
+  grid-template-columns:repeat(auto-fit,minmax(clamp(130px,42vw,200px),1fr));margin-bottom:16px}
+.quad .slot{margin-bottom:0;aspect-ratio:1/1;min-height:unset;padding:12px}
+.quad .slot .i{font-size:clamp(22px,5vw,28px)}
+.quad .slot .n{font-size:clamp(10px,2.2vw,12px)}
+.quad .slot .d{font-size:clamp(9px,1.9vw,10px)}
+
+/* MENU AGRUPADO */
+.grupo{margin-bottom:clamp(22px,4.5vw,32px)}
+.grupo .gtit{display:flex;align-items:center;gap:10px;margin-bottom:12px}
+.grupo .gnum{width:clamp(26px,5.5vw,32px);height:clamp(26px,5.5vw,32px);border-radius:50%;
+  background:var(--rx);color:#fff;display:flex;align-items:center;justify-content:center;
+  font-weight:900;font-size:clamp(13px,2.7vw,16px);flex-shrink:0}
+.grupo .gnome{font-size:clamp(13px,2.7vw,16px);font-weight:800;color:var(--rx);
+  letter-spacing:.5px;text-transform:uppercase}
+.menu{display:grid;gap:clamp(10px,2.2vw,14px);
+  grid-template-columns:repeat(auto-fit,minmax(clamp(140px,43vw,210px),1fr))}
+.mb{background:#fff;border:2.5px solid var(--bd);border-radius:20px;
+  padding:clamp(16px,3.4vw,22px) clamp(12px,2.4vw,16px);cursor:pointer;
+  font-family:inherit;transition:.18s;color:var(--tx);text-align:center;
+  display:flex;flex-direction:column;align-items:center;gap:4px}
+.mb:active{transform:scale(.97)}
+.mb:hover{border-color:var(--rx2);box-shadow:0 8px 26px rgba(121,75,158,.16);transform:translateY(-2px)}
+.mb .e{font-size:clamp(32px,7.5vw,44px);line-height:1;margin-bottom:8px;display:block}
+.mb .n{font-weight:800;font-size:clamp(14px,2.9vw,17px);line-height:1.25;display:block;color:var(--rx)}
+.mb .s{font-size:clamp(11px,2.2vw,13px);color:var(--tx2);line-height:1.3;display:block;font-weight:500}
+
+/* BLOCO DE EMERGÊNCIA */
+.emerg{margin-top:clamp(28px,6vw,42px);padding-top:clamp(22px,4.5vw,30px);
+  border-top:3px solid var(--bd)}
+.emerg .expl{background:var(--vm-cl);border-radius:18px;
+  padding:clamp(16px,3.4vw,22px);margin-bottom:14px;display:flex;gap:14px;align-items:flex-start}
+.emerg .expl .e{font-size:clamp(30px,7vw,42px);line-height:1;flex-shrink:0}
+.emerg .expl b{display:block;font-size:clamp(16px,3.3vw,20px);font-weight:800;
+  color:var(--vm);margin-bottom:5px}
+.emerg .expl span{font-size:clamp(13px,2.7vw,16px);line-height:1.45;display:block}
+.btn-emerg{width:100%;background:var(--vm);color:#fff;border:none;
+  border-radius:18px;padding:clamp(18px,3.8vw,24px);cursor:pointer;
+  font-family:inherit;font-weight:900;font-size:clamp(16px,3.4vw,20px);
+  display:flex;align-items:center;justify-content:center;gap:10px}
+.btn-emerg:active{transform:scale(.98)}
+
+/* CAIXAS */
+.cx{border-radius:18px;padding:clamp(16px,3.2vw,22px);margin-bottom:16px;border-left:6px solid}
+.cx .ti{font-weight:800;margin-bottom:9px;font-size:clamp(15px,3.1vw,19px);line-height:1.3}
+.cx p{margin-bottom:10px;font-size:clamp(14px,2.8vw,16px)}
+.cx p:last-child{margin-bottom:0}
+.ok{background:var(--vd-cl);border-color:var(--vd)} .ok .ti{color:var(--vd)}
+.no{background:var(--vm-cl);border-color:var(--vm)} .no .ti{color:var(--vm)}
+.at{background:var(--am-cl);border-color:var(--am)} .at .ti{color:#9a6100}
+.inf{background:var(--az-cl);border-color:var(--az)} .inf .ti{color:var(--az)}
+.rox{background:var(--lil-cl);border-color:var(--rx2)} .rox .ti{color:var(--rx)}
+
+/* MITO */
+.mito{border-radius:20px;overflow:hidden;margin-bottom:18px;border:3px solid var(--rx2)}
+.mito .cab{background:var(--rx);color:#fff;padding:clamp(14px,3vw,20px);
+  font-size:clamp(17px,3.8vw,23px);font-weight:900;text-align:center;line-height:1.25}
+.mito .cab small{display:block;font-size:clamp(11px,2.3vw,13px);font-weight:600;
+  opacity:.85;letter-spacing:2px;margin-bottom:5px}
+.mito .corpo{background:var(--lil-cl);padding:clamp(15px,3.2vw,22px)}
+.mito .corpo p{margin-bottom:10px;font-size:clamp(14px,2.8vw,16px)}
+.mito .corpo p:last-child{margin-bottom:0}
+.mito .nota{background:#fff;border-radius:14px;padding:clamp(13px,2.8vw,18px);
+  margin-top:14px;border-left:5px solid var(--vd)}
+.mito .nota b{display:block;color:var(--vd);font-weight:800;
+  font-size:clamp(14px,2.9vw,17px);margin-bottom:7px}
+.mito .nota ul{list-style:none;font-size:clamp(13px,2.7vw,15px)}
+.mito .nota li{padding:6px 0 6px 24px;position:relative;line-height:1.4}
+.mito .nota li::before{content:'✓';position:absolute;left:0;top:6px;
+  color:var(--vd);font-weight:900;font-size:16px}
+.mito .alerta{background:var(--am-cl);border-radius:14px;
+  padding:clamp(13px,2.8vw,18px);margin-top:12px;border-left:5px solid var(--am)}
+.mito .alerta b{display:block;color:#9a6100;font-weight:800;
+  font-size:clamp(14px,2.9vw,17px);margin-bottom:5px}
+.mito .alerta span{font-size:clamp(13px,2.7vw,15px);line-height:1.45;display:block}
+
+/* GRADE DE ÍCONES */
+.gr{display:grid;gap:clamp(10px,2.1vw,14px);
+  grid-template-columns:repeat(auto-fit,minmax(clamp(100px,27vw,155px),1fr))}
+.ic{border-radius:18px;padding:clamp(15px,3vw,20px) 9px;text-align:center;border:3px solid;
+  display:flex;flex-direction:column;align-items:center;gap:3px}
+.ic .e{font-size:clamp(32px,7.5vw,46px);line-height:1;margin-bottom:7px;display:block}
+.ic .n{font-weight:800;font-size:clamp(13px,2.7vw,16px);line-height:1.2;display:block}
+.ic .s{font-size:clamp(10px,2.1vw,12px);color:var(--tx2);line-height:1.3;display:block;font-weight:500;margin-top:2px}
+.i-ok{background:var(--vd-cl);border-color:var(--vd)} .i-ok .n{color:var(--vd)}
+.i-no{background:var(--vm-cl);border-color:var(--vm)} .i-no .n{color:var(--vm)}
+.i-rx{background:var(--lil-cl);border-color:var(--rx2)} .i-rx .n{color:var(--rx)}
+.i-at{background:var(--am-cl);border-color:var(--am)} .i-at .n{color:#9a6100}
+
+/* NÚMERO GIGANTE */
+.mega{text-align:center;padding:clamp(24px,5vw,40px) 16px;border-radius:24px;
+  margin-bottom:18px;background:var(--lil-cl);border:3px solid var(--rx2)}
+.mega .n{font-size:clamp(60px,17vw,120px);font-weight:900;line-height:.85;
+  letter-spacing:-4px;color:var(--rx)}
+.mega .u{font-size:clamp(16px,3.8vw,24px);font-weight:800;margin-top:10px;color:var(--rx)}
+.mega .l{font-size:clamp(13px,2.7vw,16px);margin-top:9px;color:var(--tx2);font-weight:500}
+
+/* ESTÔMAGO DO BEBÊ */
+.estomago{display:grid;gap:clamp(8px,1.8vw,12px);
+  grid-template-columns:repeat(4,1fr);margin-bottom:16px;align-items:end}
+.est{text-align:center;background:var(--lil-cl);border-radius:16px;
+  padding:clamp(10px,2.2vw,16px) 4px;border:2.5px solid var(--rx2);
+  display:flex;flex-direction:column;justify-content:flex-end;gap:6px}
+.est .fruta{display:flex;align-items:flex-end;justify-content:center;
+  height:clamp(52px,13vw,84px);line-height:1}
+.est .f1{font-size:clamp(15px,3.6vw,23px)}
+.est .f2{font-size:clamp(24px,5.8vw,37px)}
+.est .f3{font-size:clamp(32px,7.6vw,49px)}
+.est .f4{font-size:clamp(42px,10vw,64px)}
+.est .q{font-weight:900;color:var(--rx);font-size:clamp(12px,2.6vw,15px);display:block}
+.est .i{font-size:clamp(10px,2.1vw,12px);color:var(--tx2);display:block;font-weight:600;line-height:1.25}
+
+/* CONDIÇÃO (quando dói) */
+.cond{border-radius:22px;overflow:hidden;margin-bottom:20px;border:3px solid}
+.cond .cab{padding:clamp(16px,3.4vw,24px);display:flex;align-items:center;gap:14px}
+.cond .cab .e{font-size:clamp(38px,9vw,56px);line-height:1;flex-shrink:0}
+.cond .cab .tx b{display:block;font-size:clamp(18px,4vw,26px);font-weight:900;line-height:1.15}
+.cond .cab .tx span{display:block;font-size:clamp(12px,2.6vw,15px);font-weight:600;margin-top:3px;opacity:.85}
+.cond .corpo{background:#fff;padding:clamp(14px,3vw,20px)}
+.cond .corpo ul{list-style:none}
+.cond .corpo li{padding:10px 0 10px 30px;position:relative;
+  font-size:clamp(13px,2.7vw,16px);line-height:1.4;border-bottom:1px solid var(--bd)}
+.cond .corpo li:last-child{border-bottom:none}
+.cond .corpo li::before{position:absolute;left:0;top:10px;font-size:17px;content:'✓'}
+.c-am{border-color:var(--am)} .c-am .cab{background:var(--am-cl)} .c-am .cab b{color:#9a6100}
+.c-am li::before{color:var(--am)}
+.c-rx{border-color:var(--rx2)} .c-rx .cab{background:var(--lil-cl)} .c-rx .cab b{color:var(--rx)}
+.c-rx li::before{color:var(--rx2)}
+.c-vm{border-color:var(--vm)} .c-vm .cab{background:var(--vm-cl)} .c-vm .cab b{color:var(--vm)}
+.c-vm li::before{color:var(--vm)}
+
+/* TIMELINE */
+.tm{position:relative;padding-left:clamp(40px,8.5vw,54px);margin:6px 0 18px}
+.tm::before{content:'';position:absolute;left:clamp(15px,3.3vw,21px);top:12px;bottom:12px;
+  width:4px;background:linear-gradient(180deg,var(--rx),var(--lil));border-radius:4px}
+.tm-i{position:relative;margin-bottom:clamp(16px,3.5vw,24px)}
+.tm-i:last-child{margin-bottom:0}
+.tm-i .bola{position:absolute;left:calc(-1 * clamp(40px,8.5vw,54px) + clamp(2px,.6vw,5px));
+  top:2px;width:clamp(32px,7vw,42px);height:clamp(32px,7vw,42px);border-radius:50%;
+  background:#fff;border:4px solid var(--rx2);display:flex;align-items:center;
+  justify-content:center;font-size:clamp(13px,2.8vw,17px);font-weight:900;color:var(--rx)}
+.tm-i h5{font-size:clamp(15px,3.2vw,19px);color:var(--rx);font-weight:800;margin-bottom:4px}
+.tm-i .c{background:var(--lil-cl);border-radius:14px;padding:clamp(12px,2.6vw,17px);
+  font-size:clamp(13px,2.7vw,15px)}
+.tm-i .c p{margin:0}
+
+/* COMPARAÇÃO */
+.duo{display:grid;gap:clamp(11px,2.3vw,16px);grid-template-columns:1fr;margin-bottom:18px}
+@media(min-width:560px){.duo{grid-template-columns:1fr 1fr}}
+.cl{border-radius:20px;padding:clamp(14px,3vw,20px);border:3px solid}
+.cl.ok{background:var(--vd-cl);border-color:var(--vd)}
+.cl.at{background:var(--am-cl);border-color:var(--am)}
+.cl h5{font-size:clamp(14px,3vw,18px);font-weight:900;margin-bottom:12px;text-align:center;line-height:1.25}
+.cl.ok h5{color:var(--vd)} .cl.at h5{color:#9a6100}
+.cl ul{list-style:none;font-size:clamp(13px,2.6vw,15px);font-weight:600}
+.cl li{padding:8px 0 8px 25px;position:relative;line-height:1.35}
+.cl li::before{position:absolute;left:0;top:7px;font-weight:900;font-size:17px}
+.cl.ok li::before{content:'✓';color:var(--vd)}
+.cl.at li::before{content:'!';color:var(--am)}
+
+/* FAIXA */
+.fx{border-radius:18px;padding:clamp(15px,3.2vw,22px);margin-bottom:16px;
+  display:flex;gap:14px;align-items:flex-start}
+.fx .e{font-size:clamp(28px,6.5vw,40px);line-height:1;flex-shrink:0}
+.fx .c b{display:block;font-size:clamp(15px,3.1vw,18px);font-weight:800;margin-bottom:5px}
+.fx .c span{font-size:clamp(13px,2.7vw,15px);line-height:1.45;display:block}
+.f-rx{background:var(--lil-cl)} .f-rx b{color:var(--rx)}
+.f-v{background:var(--vd-cl)} .f-v b{color:var(--vd)}
+.f-r{background:var(--vm-cl)} .f-r b{color:var(--vm)}
+.f-a{background:var(--am-cl)} .f-a b{color:#9a6100}
+.f-z{background:var(--az-cl)} .f-z b{color:var(--az)}
+
+/* LISTA */
+.li{list-style:none;margin-bottom:16px}
+.li li{padding:11px 0 11px 33px;position:relative;
+  border-bottom:1px solid var(--bd);font-size:clamp(14px,2.8vw,16px);line-height:1.4}
+.li li:last-child{border-bottom:none}
+.li li::before{position:absolute;left:0;top:11px;font-size:18px}
+.sim li::before{content:'✅'}
+.nao li::before{content:'🚫'}
+.avi li::before{content:'⚠️'}
+.pto li::before{content:'●';color:var(--rx2);font-size:15px;top:12px;font-weight:900}
+
+/* BARRAS */
+.gf{background:#fff;border:2.5px solid var(--bd);border-radius:20px;
+  padding:clamp(16px,3.2vw,24px);margin-bottom:18px}
+.gf h4{font-size:clamp(15px,3vw,18px);font-weight:800;margin-bottom:4px;color:var(--rx)}
+.gf .lg{font-size:clamp(12px,2.4vw,14px);color:var(--tx2);margin-bottom:16px;font-weight:500}
+.br{margin-bottom:15px} .br:last-child{margin-bottom:0}
+.br .t{display:flex;justify-content:space-between;align-items:center;margin-bottom:6px;
+  font-size:clamp(12px,2.5vw,15px);font-weight:700}
+.br .bx{height:clamp(30px,6.5vw,40px);background:#f2edf6;border-radius:11px;overflow:hidden}
+.br .bx i{display:flex;height:100%;border-radius:11px;font-style:normal;
+  align-items:center;padding-left:12px;color:#fff;font-weight:800;
+  font-size:clamp(11px,2.3vw,14px);animation:gw .9s cubic-bezier(.2,.8,.3,1)}
+@keyframes gw{from{width:0!important}}
+.b-rx{background:linear-gradient(90deg,var(--rx2),var(--rx))}
+.b-v{background:linear-gradient(90deg,#4caf87,var(--vd))}
+.b-r{background:linear-gradient(90deg,#e06a5c,var(--vm))}
+.b-a{background:linear-gradient(90deg,#f0b24d,var(--am))}
+
+/* ===== RODAPÉ FIXO — VOLTAR + INÍCIO ===== */
+.nv{position:fixed;bottom:0;left:0;right:0;max-width:900px;margin:0 auto;
+  background:rgba(255,255,255,.98);border-top:2px solid var(--bd);
+  padding:11px clamp(13px,3vw,22px);display:flex;gap:11px;z-index:99;
+  box-shadow:0 -4px 20px rgba(121,75,158,.08)}
+.nv button{padding:15px 12px;border:none;border-radius:14px;font-weight:800;
+  cursor:pointer;font-family:inherit;font-size:clamp(13px,2.6vw,16px);
+  display:flex;align-items:center;justify-content:center;gap:8px}
+.nv button:active{transform:scale(.97)}
+.n-volta{flex:1;background:#f2edf6;color:var(--rx);visibility:hidden}
+.n-volta.on{visibility:visible}
+.n-inicio{flex:1;background:var(--rx);color:#fff}
+
+/* ===== CONTATO — CARTÕES CLICÁVEIS ===== */
+.ct{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));margin-bottom:16px}
+.ct a,.ct div.b{background:var(--lil-cl);border-radius:18px;padding:clamp(16px,3.2vw,22px);
+  text-align:center;border:2.5px solid var(--lil);display:block;transition:.18s}
+.ct a:hover{border-color:var(--rx2);box-shadow:0 6px 20px rgba(121,75,158,.16);transform:translateY(-2px)}
+.ct a:active{transform:scale(.98)}
+.ct .e{font-size:clamp(28px,6.5vw,38px);display:block;margin-bottom:8px;line-height:1}
+.ct .r{font-size:clamp(10px,2.1vw,12px);color:var(--tx2);font-weight:800;
+  letter-spacing:1px;text-transform:uppercase;margin-bottom:5px}
+.ct .v{font-size:clamp(14px,2.9vw,18px);font-weight:800;color:var(--rx);line-height:1.3}
+.ct .toque{display:block;font-size:clamp(10px,2vw,12px);color:var(--rx2);
+  font-weight:700;margin-top:6px}
+
+/* LINK-BOTÃO */
+.lnk{display:flex;align-items:center;gap:14px;width:100%;
+  background:#fff;border:2.5px solid var(--bd);border-radius:18px;
+  padding:clamp(15px,3.2vw,20px);margin-bottom:12px;transition:.18s;cursor:pointer}
+.lnk:hover{border-color:var(--rx2);box-shadow:0 6px 20px rgba(121,75,158,.14);transform:translateY(-2px)}
+.lnk:active{transform:scale(.98)}
+.lnk .e{font-size:clamp(28px,6vw,38px);line-height:1;flex-shrink:0}
+.lnk .c{flex:1;min-width:0}
+.lnk .c b{display:block;font-weight:800;font-size:clamp(14px,2.9vw,17px);
+  color:var(--rx);margin-bottom:3px;line-height:1.25}
+.lnk .c span{display:block;font-size:clamp(11px,2.3vw,13px);color:var(--tx2);line-height:1.35}
+.lnk .seta{font-size:clamp(20px,4vw,26px);color:var(--rx2);flex-shrink:0;font-weight:900}
+
+/* MAPA */
+.mapa{border-radius:18px;overflow:hidden;border:2.5px solid var(--lil);
+  margin-bottom:12px;background:var(--lil-cl);position:relative}
+.mapa iframe{width:100%;height:clamp(180px,42vw,280px);border:0;display:block}
+.mapa .fallback{padding:clamp(18px,4vw,28px);text-align:center;color:var(--tx2);
+  font-size:clamp(12px,2.4vw,14px)}
+
+.fo{font-size:clamp(11px,2.2vw,13px);color:var(--tx2);text-align:center;
+  margin-top:28px;padding-top:18px;border-top:2px solid var(--bd);line-height:1.6}
+.fo b{color:var(--rx)}
+</style>
+</head>
+<body>
+<div class="app">
+
+<div class="top">
+  <div class="ttl" id="tt">Amamentação<small>Cultura, mitos e saberes</small></div>
+</div>
+
+<!-- ══════════ CAPA / MENU ══════════ -->
+<section class="tl on" id="t0">
+  <div class="slot s2">
+    <div class="i">📷</div>
+    <div class="n">IMAGEM DE CAPA</div>
+    <div class="d">Mãe amamentando — 1200 × 800 px</div>
+  </div>
+
+  <h2 style="text-align:center">Amamentação</h2>
+  <p class="sub" style="text-align:center">Cultura, mitos e saberes</p>
+
+  <div class="grupo">
+    <div class="gtit"><div class="gnum">1</div><div class="gnome">Os primeiros dias</div></div>
+    <div class="menu">
+      <button class="mb" onclick="ir('t1')"><span class="e">🤱</span>
+        <span class="n">Primeiros dias</span><span class="s">A descida do leite</span></button>
+      <button class="mb" onclick="ir('t3')"><span class="e">👶</span>
+        <span class="n">A pega</span><span class="s">Como saber se está boa</span></button>
+      <button class="mb" onclick="ir('t5')"><span class="e">🩹</span>
+        <span class="n">Quando dói</span><span class="s">Fissura, peito cheio, mastite</span></button>
+    </div>
+  </div>
+
+  <div class="grupo">
+    <div class="gtit"><div class="gnum">2</div><div class="gnome">No dia a dia</div></div>
+    <div class="menu">
+      <button class="mb" onclick="ir('t4')"><span class="e">🍽️</span>
+        <span class="n">Quanto mama</span><span class="s">Fome e saciedade</span></button>
+      <button class="mb" onclick="ir('t7')"><span class="e">😴</span>
+        <span class="n">Sono do bebê</span><span class="s">O que é normal</span></button>
+      <button class="mb" onclick="ir('t8')"><span class="e">💧</span>
+        <span class="n">Leite que volta</span><span class="s">Quando põe leite para fora</span></button>
+      <button class="mb" onclick="ir('t6')"><span class="e">🍼</span>
+        <span class="n">Tirar o leite</span><span class="s">Ordenha e armazenamento</span></button>
+    </div>
+  </div>
+
+  <div class="grupo">
+    <div class="gtit"><div class="gnum">3</div><div class="gnome">Dúvidas comuns</div></div>
+    <div class="menu">
+      <button class="mb" onclick="ir('t2')"><span class="e">💭</span>
+        <span class="n">Mitos</span><span class="s">O que não é verdade</span></button>
+      <button class="mb" onclick="ir('t10')"><span class="e">🥣</span>
+        <span class="n">Fórmula</span><span class="s">Preparo e quantidade</span></button>
+      <button class="mb" onclick="ir('t9')"><span class="e">🚭</span>
+        <span class="n">Álcool e remédios</span><span class="s">O que pode e não pode</span></button>
+    </div>
+  </div>
+
+  <div class="grupo">
+    <div class="gtit"><div class="gnum">4</div><div class="gnome">Depois dos 6 meses</div></div>
+    <div class="menu">
+      <button class="mb" onclick="ir('t11')"><span class="e">🥑</span>
+        <span class="n">A comida chega</span><span class="s">Introdução alimentar</span></button>
+    </div>
+  </div>
+
+  <!-- BLOCO SEPARADO: EMERGÊNCIA -->
+  <div class="emerg">
+    <div class="expl"><span class="e">💜</span>
+      <div><b>Alguma coisa não parece certa?</b>
+        <span>Nem tudo pode esperar a próxima consulta. Se o bebê não está ganhando peso,
+        se amamentar está doendo muito ou se você está pensando em desmamar,
+        existem sinais que pedem atendimento <strong>no mesmo dia</strong>.</span></div>
+    </div>
+    <button class="btn-emerg" onclick="ir('t12')">🚨 Ver os sinais de alerta</button>
+  </div>
+</section>
+
+<!-- ══════════ 1 · PRIMEIROS DIAS ══════════ -->
+<section class="tl" id="t1">
+  <h2>Os primeiros dias</h2>
+  <p class="sub">É normal ter pouco leite no começo.</p>
+
+  <div class="mega">
+    <div class="n">3º–5º</div>
+    <div class="u">dia após o parto</div>
+    <div class="l">É quando o leite "desce" (apojadura)</div>
+  </div>
+
+  <div class="fx f-v"><span class="e">🤱</span>
+    <div class="c"><b>Pele a pele e livre demanda</b>
+      <span>Logo após o parto, o contato pele a pele e deixar o bebê mamar
+      sempre que quiser ajudam o leite a descer mais rápido.</span></div></div>
+
+  <div class="cx rox">
+    <div class="ti">Não se preocupe</div>
+    <p>É <strong>esperado</strong> que nos primeiros dias você tenha pouco leite.
+    O corpo produz na medida em que o bebê mama.</p>
+  </div>
+
+  <div class="sec">Atenção ao sutiã</div>
+  <div class="fx f-r"><span class="e">🚫</span>
+    <div class="c"><b>Evite sutiã com "buraco"</b>
+      <span>Esse tipo de sutiã comprime a mama e pode atrapalhar a saída do leite.</span></div></div>
+
+  <div class="sec">A rede de apoio importa</div>
+  <div class="gr">
+    <div class="ic i-ok"><span class="e">👨‍👩‍👧</span><span class="n">Família</span>
+      <span class="s">participa e apoia</span></div>
+    <div class="ic i-ok"><span class="e">🏥</span><span class="n">Equipe</span>
+      <span class="s">tire dúvidas aqui</span></div>
+    <div class="ic i-no"><span class="e">🗣️</span><span class="n">"Pitacos"</span>
+      <span class="s">nem tudo é verdade</span></div>
+  </div>
+
+  <div class="fx f-z" style="margin-top:16px"><span class="e">💜</span>
+    <div class="c"><b>Cada família tem sua história</b>
+      <span>Costumes e saberes passados de geração em geração fazem parte do cuidado.
+      Converse com a equipe sobre eles — ninguém vai julgar você.</span></div></div>
+</section>
+
+<!-- ══════════ 2 · MITOS ══════════ -->
+<section class="tl" id="t2">
+  <h2>Mitos e verdades</h2>
+  <p class="sub">O que você já ouviu por aí — e o que a ciência diz.</p>
+
+  <div class="mito">
+    <div class="cab"><small>MITO</small>"Meu leite é fraco"</div>
+    <div class="corpo">
+      <p><strong>Não existe leite fraco.</strong> A cor, a aparência ou o sabor
+      não determinam a qualidade do leite.</p>
+      <p>Todas as mulheres — independentemente de peso, etnia ou alimentação —
+      produzem leite com a composição ideal para o bebê: calorias, nutrientes,
+      vitaminas, minerais, anticorpos e água na medida certa.</p>
+    </div>
+  </div>
+
+  <div class="mito">
+    <div class="cab"><small>MITO</small>"Preciso fazer dieta restritiva"</div>
+    <div class="corpo">
+      <p>A alimentação da mãe <strong>não costuma causar cólica</strong> no bebê.
+      Não é preciso cortar alimentos durante a amamentação.</p>
+      <p>Se você notar que a cólica piora sempre que come algo específico,
+      converse com a equipe — mas não corte nada por conta própria.</p>
+    </div>
+  </div>
+
+  <div class="mito">
+    <div class="cab"><small>MITO</small>"Amamentar faz o peito cair"</div>
+    <div class="corpo">
+      <p>A amamentação <strong>não é a causa</strong> da flacidez. As mudanças
+      de tamanho e volume que acontecem na gravidez é que contribuem para isso.</p>
+
+      <div class="nota">
+        <b>O que ajuda de verdade</b>
+        <ul>
+          <li><strong>Sutiã firme</strong>, com alças largas e boa sustentação</li>
+          <li><strong>Manter o peso estável</strong> — preserva a elasticidade da pele</li>
+        </ul>
+      </div>
+
+      <div class="alerta">
+        <b>⚠️ Cuidado com sutiã apertado</b>
+        <span>Sutiãs muito justos comprimem os ductos e podem causar
+        entupimento, inflamação e até infecção.</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="mito">
+    <div class="cab"><small>MITO</small>"O peito é um reservatório"</div>
+    <div class="corpo">
+      <p>O peito <strong>não guarda</strong> leite esperando a hora.
+      Quando o bebê mama, o leite é produzido e liberado na hora.</p>
+      <p><strong>Quanto mais o bebê mama, mais leite o corpo produz.</strong></p>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ 3 · A PEGA ══════════ -->
+<section class="tl" id="t3">
+  <h2>A pega</h2>
+  <p class="sub">Amamentar não deve doer.</p>
+
+  <div class="fx f-rx"><span class="e">🪑</span>
+    <div class="c"><b>Não existe uma posição única</b>
+      <span>Sentada, recostada, deitada — a melhor posição é aquela em que
+      <strong>você e o bebê ficam confortáveis</strong> naquele momento.</span></div></div>
+
+  <div class="sec">Algumas posições possíveis</div>
+  <div class="quad">
+    <div class="slot">
+      <div class="i">📷</div><div class="n">TRADICIONAL</div>
+      <div class="d">posição de berço<br>400 × 400 px</div></div>
+    <div class="slot">
+      <div class="i">📷</div><div class="n">INVERTIDA</div>
+      <div class="d">bebê sob o braço<br>400 × 400 px</div></div>
+    <div class="slot">
+      <div class="i">📷</div><div class="n">DEITADA DE LADO</div>
+      <div class="d">mãe e bebê deitados<br>400 × 400 px</div></div>
+    <div class="slot">
+      <div class="i">📷</div><div class="n">CAVALINHO</div>
+      <div class="d">bebê sentado de frente<br>400 × 400 px</div></div>
+  </div>
+
+  <div class="sec">Como é a pega</div>
+  <div class="slot s2">
+    <div class="i">📷</div><div class="n">ILUSTRAÇÃO DA PEGA</div>
+    <div class="d">Boca aberta, aréola na boca, queixo no peito — 1000 × 700 px</div>
+  </div>
+
+  <div class="duo">
+    <div class="cl ok">
+      <h5>✓ Sinais de que está indo bem</h5>
+      <ul>
+        <li>Boca bem aberta</li>
+        <li>Pega quase toda a aréola</li>
+        <li>Queixo encostado no peito</li>
+        <li>Lábio de baixo virado para fora</li>
+        <li>Dá para ouvir engolindo</li>
+        <li>Não dói</li>
+      </ul>
+    </div>
+    <div class="cl at">
+      <h5>! Sinais de que precisa ajustar</h5>
+      <ul>
+        <li>Boca pouco aberta</li>
+        <li>Pega só o bico</li>
+        <li>Bochecha encovada</li>
+        <li>Barulho de estalo</li>
+        <li>Bico sai achatado</li>
+        <li>Dói ou racha</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="fx f-v"><span class="e">🔄</span>
+    <div class="c"><b>Dá para corrigir</b>
+      <span>Se notar algum desses sinais, tire o bebê com cuidado (coloque o dedinho
+      no canto da boca) e ofereça de novo. A equipe pode ajudar na consulta.</span></div></div>
+
+  <div class="cx at">
+    <div class="ti">⚠️ Confusão de bico</div>
+    <p>Se o bebê começou a usar mamadeira ou chupeta e passou a ter
+    dificuldade para mamar no peito, pode ser <strong>confusão de bico</strong>.
+    Conte isso na consulta — tem solução.</p>
+  </div>
+</section>
+
+<!-- ══════════ 4 · QUANTO MAMA ══════════ -->
+<section class="tl" id="t4">
+  <h2>Quanto o bebê mama</h2>
+  <p class="sub">O estômago dele é bem menor do que você imagina.</p>
+
+  <div class="gf">
+    <h4>Tamanho do estômago do bebê</h4>
+    <p class="lg">Por isso ele mama pouco e muitas vezes ao dia</p>
+    <div class="estomago">
+      <div class="est">
+        <div class="fruta"><span class="f1">🍒</span></div>
+        <span class="q">1º dia</span><span class="i">cereja</span></div>
+      <div class="est">
+        <div class="fruta"><span class="f2">🌰</span></div>
+        <span class="q">3 dias</span><span class="i">noz</span></div>
+      <div class="est">
+        <div class="fruta"><span class="f3">🥚</span></div>
+        <span class="q">1 semana</span><span class="i">ovo</span></div>
+      <div class="est">
+        <div class="fruta"><span class="f4">🍋</span></div>
+        <span class="q">1 mês</span><span class="i">limão</span></div>
+    </div>
+    <p style="font-size:clamp(12px,2.4vw,14px);color:var(--tx2);margin:0">
+      Os desenhos estão <strong>na proporção real</strong> do crescimento do estômago.</p>
+  </div>
+
+  <div class="cx rox">
+    <div class="ti">A maioria das mulheres produz o suficiente</div>
+    <p>Mamar muitas vezes <strong>não significa</strong> que seu leite é pouco.
+    Significa que o estômago do bebê é pequeno e esvazia rápido.</p>
+  </div>
+
+  <div class="sec">Importante saber</div>
+  <div class="gr">
+    <div class="ic i-rx"><span class="e">🤗</span><span class="n">Nem sempre é fome</span>
+      <span class="s">às vezes é colo e aconchego</span></div>
+    <div class="ic i-rx"><span class="e">👄</span><span class="n">Suga para se acalmar</span>
+      <span class="s">não é só para se alimentar</span></div>
+    <div class="ic i-ok"><span class="e">⏰</span><span class="n">Livre demanda</span>
+      <span class="s">sem hora marcada</span></div>
+  </div>
+
+  <div class="sec">Está indo bem se</div>
+  <div class="gr">
+    <div class="ic i-ok"><span class="e">💧</span><span class="n">6 ou mais</span>
+      <span class="s">fraldas molhadas por dia</span></div>
+    <div class="ic i-ok"><span class="e">⚖️</span><span class="n">Ganha peso</span>
+      <span class="s">em todas as pesagens</span></div>
+    <div class="ic i-ok"><span class="e">😌</span><span class="n">Solta o peito</span>
+      <span class="s">satisfeito e tranquilo</span></div>
+  </div>
+</section>
+
+<!-- ══════════ 5 · QUANDO DÓI ══════════ -->
+<section class="tl" id="t5">
+  <h2>Quando dói</h2>
+  <p class="sub">Três situações comuns — e o que fazer em cada uma.</p>
+
+  <div class="cond c-am">
+    <div class="cab"><span class="e">🩹</span>
+      <div class="tx"><b>Fissura</b><span>rachadura no bico do peito</span></div></div>
+    <div class="corpo">
+      <div class="slot s1" style="margin-bottom:14px">
+        <div class="i">📷</div><div class="n">ILUSTRAÇÃO — FISSURA</div>
+        <div class="d">800 × 450 px</div></div>
+      <ul>
+        <li><strong>Varie a posição</strong> em que você amamenta</li>
+        <li><strong>Comece pela mama menos machucada</strong></li>
+        <li>Procure a equipe — quase sempre é sinal de que a pega precisa de ajuste</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="cond c-rx">
+    <div class="cab"><span class="e">🫗</span>
+      <div class="tx"><b>Peito muito cheio</b><span>ingurgitamento — mama dura e dolorida</span></div></div>
+    <div class="corpo">
+      <div class="slot s1" style="margin-bottom:14px">
+        <div class="i">📷</div><div class="n">ILUSTRAÇÃO — MASSAGEM E ORDENHA DE ALÍVIO</div>
+        <div class="d">800 × 450 px</div></div>
+      <ul>
+        <li><strong>Mantenha a livre demanda</strong> — não espace as mamadas</li>
+        <li><strong>Massagem suave</strong> com movimentos circulares</li>
+        <li><strong>Ordenha de alívio</strong> antes de colocar o bebê para mamar</li>
+        <li>Sutiã de <strong>alças largas e firmes</strong> para maior conforto</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="cond c-vm">
+    <div class="cab"><span class="e">🤒</span>
+      <div class="tx"><b>Mastite</b><span>inflamação, dor forte e febre</span></div></div>
+    <div class="corpo">
+      <div class="slot s1" style="margin-bottom:14px">
+        <div class="i">📷</div><div class="n">ILUSTRAÇÃO — MAMA INFLAMADA</div>
+        <div class="d">800 × 450 px</div></div>
+      <ul>
+        <li><strong>Procure a unidade no mesmo dia</strong> — o tratamento precisa começar logo</li>
+        <li><strong>Não é preciso parar de amamentar</strong> durante o tratamento</li>
+        <li>Continue oferecendo o peito normalmente</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="fx f-a"><span class="e">🧦</span>
+    <div class="c"><b>Conchas e protetores</b>
+      <span>Prefira rosquinhas de pano ou feitas com fralda em vez de
+      conchas plásticas rígidas.</span></div></div>
+
+  <div class="fx f-z"><span class="e">💜</span>
+    <div class="c"><b>Dor sempre tem causa</b>
+      <span>Não espere passar sozinho. Quanto antes a equipe avaliar, mais rápido resolve.</span></div></div>
+</section>
+
+<!-- ══════════ 6 · ORDENHA ══════════ -->
+<section class="tl" id="t6">
+  <h2>Tirar o leite</h2>
+  <p class="sub">Com a mão, com calma e com prática.</p>
+
+  <div class="fx f-rx"><span class="e">🤲</span>
+    <div class="c"><b>A mão é o melhor jeito</b>
+      <span>Recomenda-se retirar com as mãos. Bombas manuais ou elétricas
+      também podem ser usadas, se você tiver acesso.</span></div></div>
+
+  <div class="slot s1">
+    <div class="i">📷</div><div class="n">ORDENHA MANUAL</div>
+    <div class="d">Posição das mãos na aréola — 900 × 500 px</div>
+  </div>
+
+  <div class="mega">
+    <div class="n">20–30</div>
+    <div class="u">minutos em cada mama</div>
+    <div class="l">especialmente nas primeiras vezes</div>
+  </div>
+
+  <div class="cx rox">
+    <div class="ti">Tirou pouco? É normal</div>
+    <p>Retirar pouco leite <strong>não quer dizer</strong> que você produz pouco.
+    A retirada manual exige prática — melhora com o tempo.</p>
+  </div>
+
+  <div class="fx f-v"><span class="e">🔁</span>
+    <div class="c"><b>Ordenha de treinamento</b>
+      <span>Retire um pouco de leite todos os dias para a mama aprender
+      a responder ao estímulo.</span></div></div>
+</section>
+
+<!-- ══════════ 7 · SONO ══════════ -->
+<section class="tl" id="t7">
+  <h2>O sono do bebê</h2>
+  <p class="sub">Acordar à noite é esperado — e tem explicação.</p>
+
+  <div class="gf">
+    <h4>Ciclo de sono do recém-nascido</h4>
+    <p class="lg">Muito mais curto que o do adulto</p>
+    <div class="br"><div class="t"><span>👶 Bebê</span>
+      <span style="color:var(--rx)">40 a 50 min</span></div>
+      <div class="bx"><i class="b-rx" style="width:32%">ciclo curto</i></div></div>
+    <div class="br"><div class="t"><span>🧑 Adulto</span>
+      <span style="color:var(--tx2)">90 a 120 min</span></div>
+      <div class="bx"><i class="b-a" style="width:85%">ciclo longo</i></div></div>
+    <p style="font-size:clamp(12px,2.4vw,14px);color:var(--tx2);margin:14px 0 0">
+      Por isso o bebê desperta várias vezes — <strong>é esperado</strong>,
+      acontece brevemente ao fim de cada ciclo.</p>
+  </div>
+
+  <div class="sec">Como o sono amadurece</div>
+  <div class="tm">
+    <div class="tm-i"><div class="bola">0</div>
+      <h5>Recém-nascido</h5>
+      <div class="c"><p>Não diferencia dia e noite. Dorme em ciclos curtos,
+      com vários despertares.</p></div></div>
+    <div class="tm-i"><div class="bola">2</div>
+      <h5>2 a 3 meses</h5>
+      <div class="c"><p>O relógio biológico começa a amadurecer. O sono da noite
+      vai ficando mais longo e o dia mais acordado.</p></div></div>
+    <div class="tm-i"><div class="bola">6</div>
+      <h5>6 a 9 meses</h5>
+      <div class="c"><p>A <strong>maioria das crianças</strong> começa a
+      dormir a noite toda.</p></div></div>
+  </div>
+
+  <div class="sec">O que ajuda</div>
+  <div class="gr">
+    <div class="ic i-ok"><span class="e">🕗</span><span class="n">Horário regular</span>
+      <span class="s">para deitar e acordar</span></div>
+    <div class="ic i-ok"><span class="e">🛁</span><span class="n">Ritual</span>
+      <span class="s">banho, massagem, luz baixa</span></div>
+    <div class="ic i-ok"><span class="e">🌙</span><span class="n">Calma antes</span>
+      <span class="s">atividades tranquilas</span></div>
+  </div>
+</section>
+
+<!-- ══════════ 8 · LEITE QUE VOLTA ══════════ -->
+<section class="tl" id="t8">
+  <h2>Quando o leite volta</h2>
+  <p class="sub">Quase todo bebê põe um pouco de leite para fora depois de mamar.</p>
+
+  <div class="slot s1">
+    <div class="i">📷</div><div class="n">BEBÊ NO COLO APÓS A MAMADA</div>
+    <div class="d">900 × 500 px</div>
+  </div>
+
+  <div class="cx rox">
+    <div class="ti">Por que acontece</div>
+    <p>O "anel" que fecha a entrada do estômago ainda é fraco no recém-nascido.
+    Por isso um pouco de leite volta pela boca. Esse anel vai ficando mais forte
+    com a idade — geralmente <strong>entre 2 e 6 meses</strong>.</p>
+  </div>
+
+  <div class="fx f-v"><span class="e">😊</span>
+    <div class="c"><b>Sozinho, isso não é doença</b>
+      <span>Se o bebê ganha peso, mama bem e está tranquilo, pôr um pouco de leite
+      para fora é esperado e não precisa de remédio.</span></div></div>
+
+  <div class="sec">Aí sim procure a unidade</div>
+  <div class="gr">
+    <div class="ic i-no"><span class="e">📉</span><span class="n">Não ganha peso</span>
+      <span class="s">ou está perdendo</span></div>
+    <div class="ic i-no"><span class="e">😣</span><span class="n">Irritado</span>
+      <span class="s">chora muito e sempre</span></div>
+    <div class="ic i-no"><span class="e">🤮</span><span class="n">Vômito</span>
+      <span class="s">em jato, muitas vezes ao dia</span></div>
+    <div class="ic i-no"><span class="e">😴</span><span class="n">Sono alterado</span>
+      <span class="s">acorda com dor</span></div>
+  </div>
+</section>
+
+<!-- ══════════ 9 · ÁLCOOL E REMÉDIOS ══════════ -->
+<section class="tl" id="t9">
+  <h2>Álcool e remédios</h2>
+  <p class="sub">Muitas substâncias passam para o leite.</p>
+
+  <div class="cx at">
+    <div class="ti">⚠️ Por que importa</div>
+    <p>Álcool, medicamentos e outras drogas <strong>passam para o leite materno</strong>
+    e podem apresentar riscos para o bebê.</p>
+  </div>
+
+  <div class="fx f-z"><span class="e">💬</span>
+    <div class="c"><b>Conte à equipe — sem medo</b>
+      <span>Cada caso é avaliado individualmente. Contar permite que o uso seja
+      acompanhado com segurança. <strong>Ninguém vai julgar você.</strong></span></div></div>
+
+  <div class="sec">Álcool</div>
+  <div class="cx rox">
+    <div class="ti">🍷 O corpo precisa de tempo</div>
+    <p>Depois de beber, o álcool leva algumas horas para sair completamente
+    do sangue — e do leite. <strong>Quanto maior a quantidade, mais tempo demora.</strong></p>
+    <p>Se for beber, converse antes com a equipe sobre quanto tempo esperar
+    para amamentar.</p>
+  </div>
+
+  <div class="sec">Medicamentos</div>
+  <div class="gr">
+    <div class="ic i-no"><span class="e">💊</span><span class="n">Nunca se automedique</span>
+      <span class="s">nem chá ou remédio caseiro</span></div>
+    <div class="ic i-ok"><span class="e">🩺</span><span class="n">Avise que amamenta</span>
+      <span class="s">em toda consulta</span></div>
+  </div>
+
+  <div class="fx f-r" style="margin-top:16px"><span class="e">🚭</span>
+    <div class="c"><b>Outras drogas</b>
+      <span>O uso de drogas durante a amamentação exige avaliação individual.
+      Procure a equipe — existe apoio disponível, e amamentar pode continuar
+      sendo possível em muitos casos.</span></div></div>
+</section>
+
+<!-- ══════════ 10 · FÓRMULA ══════════ -->
+<section class="tl" id="t10">
+  <h2>Fórmula infantil</h2>
+  <p class="sub">Se o bebê usa fórmula, o preparo faz toda a diferença.</p>
+
+  <div class="mega" style="background:var(--rx);border-color:var(--rx)">
+    <div class="n" style="color:#fff;font-size:clamp(44px,12vw,80px)">1 : 30</div>
+    <div class="u" style="color:#fff">1 medida rasa de pó</div>
+    <div class="l" style="color:rgba(255,255,255,.9)">para cada 30 mL de água</div>
+  </div>
+
+  <div class="sec">Na ordem certa</div>
+  <div class="tm">
+    <div class="tm-i"><div class="bola">1</div><h5>Lave</h5>
+      <div class="c"><p>As mãos e a mamadeira, com água e sabão.</p></div></div>
+    <div class="tm-i"><div class="bola">2</div><h5>Água primeiro</h5>
+      <div class="c"><p>Fervida e morna, <strong>na mamadeira antes do pó</strong>.</p></div></div>
+    <div class="tm-i"><div class="bola">3</div><h5>Depois o pó</h5>
+      <div class="c"><p>Medida <strong>rasa</strong> — passe as costas da faca
+      para tirar o excesso.</p></div></div>
+    <div class="tm-i"><div class="bola">4</div><h5>Ofereça na hora</h5>
+      <div class="c"><p>O que sobrar, jogue fora.</p></div></div>
+  </div>
+
+  <div class="sec">Nunca faça</div>
+  <div class="gr">
+    <div class="ic i-no"><span class="e">➕</span><span class="n">Mais pó</span>
+      <span class="s">sobrecarrega os rins</span></div>
+    <div class="ic i-no"><span class="e">➖</span><span class="n">Menos pó</span>
+      <span class="s">o bebê não ganha peso</span></div>
+    <div class="ic i-no"><span class="e">🥣</span><span class="n">Mucilon junto</span>
+      <span class="s">nunca na mamadeira</span></div>
+    <div class="ic i-no"><span class="e">🍬</span><span class="n">Açúcar</span>
+      <span class="s">nem mel, nem achocolatado</span></div>
+  </div>
+
+  <div class="sec">Quantidade</div>
+  <div class="gf">
+    <h4>Nem pouco, nem demais</h4>
+    <p class="lg">Comparação ilustrativa — quem define é a equipe de saúde</p>
+    <div class="br"><div class="t"><span>✅ Quantidade adequada</span></div>
+      <div class="bx"><i class="b-v" style="width:42%">certo</i></div></div>
+    <div class="br"><div class="t"><span>🚫 Muito acima do necessário</span></div>
+      <div class="bx"><i class="b-r" style="width:100%">excesso</i></div></div>
+  </div>
+
+  <div class="fx f-r"><span class="e">💧</span>
+    <div class="c"><b>Põe leite para fora depois de quase toda mamada?</b>
+      <span>Pode ser volume demais. Procure a unidade para ajustar.</span></div></div>
+
+  <div class="fx f-z"><span class="e">📝</span>
+    <div class="c"><b>Peça por escrito na consulta</b>
+      <span>Quantos mL por mamadeira e de quantas em quantas horas.
+      Isso muda conforme o bebê cresce.</span></div></div>
+</section>
+
+<!-- ══════════ 11 · A COMIDA CHEGA ══════════ -->
+<section class="tl" id="t11">
+  <h2>A comida chega</h2>
+  <p class="sub">A partir dos 6 meses — nem antes, nem depois.</p>
+
+  <div class="mega">
+    <div class="n">6</div>
+    <div class="u">meses</div>
+    <div class="l">Até lá, só leite. Nem água, nem chá.</div>
+  </div>
+
+  <div class="slot s1">
+    <div class="i">📷</div><div class="n">PAPA AMASSADA</div>
+    <div class="d">Prato com legumes, feijão e carne — 900 × 500 px</div>
+  </div>
+
+  <div class="fx f-v"><span class="e">🍴</span>
+    <div class="c"><b>Amassado com o garfo</b>
+      <span>Nunca no liquidificador nem peneirado. O bebê precisa aprender
+      a mastigar e a conhecer as texturas.</span></div></div>
+
+  <div class="sec">Pode no prato</div>
+  <div class="gr">
+    <div class="ic i-ok"><span class="e">🍌</span><span class="n">Frutas</span></div>
+    <div class="ic i-ok"><span class="e">🥕</span><span class="n">Legumes</span></div>
+    <div class="ic i-ok"><span class="e">🍚</span><span class="n">Arroz e feijão</span></div>
+    <div class="ic i-ok"><span class="e">🥩</span><span class="n">Carne</span></div>
+    <div class="ic i-ok"><span class="e">🥚</span><span class="n">Ovo</span></div>
+    <div class="ic i-ok"><span class="e">💧</span><span class="n">Água</span></div>
+  </div>
+
+  <div class="sec">Ainda não pode</div>
+  <div class="gr">
+    <div class="ic i-no"><span class="e">🥛</span><span class="n">Leite de vaca</span>
+      <span class="s">só depois de 1 ano</span></div>
+    <div class="ic i-no"><span class="e">🥣</span><span class="n">Mucilon</span>
+      <span class="s">e outros engrossantes</span></div>
+    <div class="ic i-no"><span class="e">🍬</span><span class="n">Açúcar e mel</span>
+      <span class="s">nenhuma quantidade</span></div>
+    <div class="ic i-no"><span class="e">🧃</span><span class="n">Suco de caixinha</span>
+      <span class="s">e refrigerante</span></div>
+  </div>
+
+  <div class="sec">Depois de 1 ano</div>
+  <div class="gf">
+    <h4>A comida vem primeiro</h4>
+    <p class="lg">Mamadeira de leite no lugar da refeição tira a fome e o ferro</p>
+    <div class="br"><div class="t"><span>🍽️ Comida nas refeições</span>
+      <span style="color:var(--vd)">o principal</span></div>
+      <div class="bx"><i class="b-v" style="width:85%">prioridade</i></div></div>
+    <div class="br"><div class="t"><span>🥛 Leite</span>
+      <span style="color:var(--am)">complemento</span></div>
+      <div class="bx"><i class="b-a" style="width:30%">menor</i></div></div>
+    <p style="font-size:clamp(12px,2.4vw,14px);color:var(--tx2);margin:14px 0 0">
+      Leite em excesso nessa idade pode causar <strong>anemia</strong>.</p>
+  </div>
+
+  <div class="fx f-a"><span class="e">🔁</span>
+    <div class="c"><b>Recusar é normal</b>
+      <span>Pode ser preciso oferecer 8 a 10 vezes até a criança aceitar.
+      Ofereça de novo em outro dia, sem forçar.</span></div></div>
+
+  <div class="fx f-rx"><span class="e">💜</span>
+    <div class="c"><b>Aconteceu antes da hora? Sem culpa.</b>
+      <span>É muito comum. O importante é voltar ao certo a partir de agora
+      e contar para a equipe na próxima consulta.</span></div></div>
+
+  <a class="lnk" href="https://bvsms.saude.gov.br/bvs/publicacoes/guia_alimentar_crianca_brasileira_versao_resumida.pdf"
+     target="_blank" rel="noopener">
+    <span class="e">📘</span>
+    <span class="c"><b>Guia Alimentar para Crianças Menores de 2 Anos</b>
+      <span>Versão resumida do Ministério da Saúde · toque para abrir</span></span>
+    <span class="seta">›</span>
+  </a>
+</section>
+
+<!-- ══════════ 12 · ALERTA ══════════ -->
+<section class="tl" id="t12">
+  <h2>Procure a UBS</h2>
+  <p class="sub">Sem esperar a consulta marcada.</p>
+
+  <div class="fx f-r"><span class="e">🚨</span>
+    <div class="c"><b>Quando não dá para esperar</b>
+      <span>Se você notar <strong>qualquer um</strong> dos sinais abaixo,
+      procure a unidade no mesmo dia ou no dia seguinte — não espere a data já marcada.</span></div></div>
+
+  <div class="gr">
+    <div class="ic i-no"><span class="e">📉</span><span class="n">Não ganha peso</span>
+      <span class="s">ou emagreceu</span></div>
+    <div class="ic i-no"><span class="e">💧</span><span class="n">Menos de 6 fraldas</span>
+      <span class="s">molhadas por dia</span></div>
+    <div class="ic i-no"><span class="e">😴</span><span class="n">Mama pouco</span>
+      <span class="s">ou dorme demais</span></div>
+    <div class="ic i-no"><span class="e">😣</span><span class="n">Dor no peito</span>
+      <span class="s">rachadura ou sangramento</span></div>
+    <div class="ic i-no"><span class="e">🤒</span><span class="n">Febre</span>
+      <span class="s">com peito dolorido</span></div>
+    <div class="ic i-no"><span class="e">🤮</span><span class="n">Vomita sempre</span>
+      <span class="s">em jato, após as mamadas</span></div>
+    <div class="ic i-no"><span class="e">💭</span><span class="n">Quer desmamar</span>
+      <span class="s">converse antes</span></div>
+  </div>
+
+  <div class="fx f-z" style="margin-top:18px"><span class="e">💜</span>
+    <div class="c"><b>Não é culpa sua</b>
+      <span>Quanto antes a equipe souber, mais fácil resolver — inclusive
+      se estiver faltando dinheiro para comprar a fórmula.</span></div></div>
+
+  <div class="fx f-a"><span class="e">🧪</span>
+    <div class="c"><b>Exames da maternidade</b>
+      <span>Pezinho, orelhinha, olhinho ou linguinha alterados ou sem resultado?
+      <strong>Lembre a equipe</strong> — esses exames não podem ficar pendentes.</span></div></div>
+
+  <div class="sec">E você, como está?</div>
+  <div class="cx rox">
+    <div class="ti">💜 A saúde da mãe também importa</div>
+    <p>Tristeza persistente, choro fácil, dificuldade de se vincular ao bebê ou
+    sensação de não dar conta <strong>merecem atenção</strong>.</p>
+    <p>Converse com a equipe. Existe acompanhamento e tratamento.</p>
+  </div>
+
+  <div class="sec">Leve sempre</div>
+  <div class="gr">
+    <div class="ic i-ok"><span class="e">📘</span><span class="n">Caderneta</span></div>
+    <div class="ic i-ok"><span class="e">💉</span><span class="n">Vacinas</span></div>
+    <div class="ic i-ok"><span class="e">📋</span><span class="n">Exames</span></div>
+  </div>
+
+  <a class="lnk" href="tel:+554836219556" style="margin-top:18px">
+    <span class="e">📞</span>
+    <span class="c"><b>Ligar agora para a UBS</b>
+      <span>(48) 3621-9556 · ramal 9556</span></span>
+    <span class="seta">›</span>
+  </a>
+
+  <button class="mb" style="width:100%;background:var(--rx);border-color:var(--rx)"
+    onclick="ir('t13')">
+    <span class="n" style="color:#fff">Ver endereço e mapa →</span></button>
+</section>
+
+<!-- ══════════ 13 · CONTATO ══════════ -->
+<section class="tl" id="t13">
+  <h2>UBS Fábio Silva</h2>
+  <p class="sub">Toque para ligar ou abrir o mapa.</p>
+
+  <div class="ct">
+    <a href="tel:+554836219556">
+      <span class="e">📞</span>
+      <div class="r">Telefone</div>
+      <div class="v">(48) 3621-9556</div>
+      <span class="toque">ramal 9556 · toque para ligar</span>
+    </a>
+    <div class="b">
+      <span class="e">🕗</span>
+      <div class="r">Horário</div>
+      <div class="v">Seg a Sex<br>7h – 17h</div>
+    </div>
+  </div>
+
+  <a class="lnk" href="https://maps.app.goo.gl/np4QbUTAV5NUutV48" target="_blank" rel="noopener">
+    <span class="e">📍</span>
+    <span class="c"><b>Rua Pedro Esmeraldino de Menezes, s/n</b>
+      <span>Bairro Fábio Silva · Tubarão/SC · toque para abrir no mapa</span></span>
+    <span class="seta">›</span>
+  </a>
+
+  <div class="mapa">
+    <iframe
+      src="https://www.google.com/maps?q=Rua+Pedro+Esmeraldino+de+Menezes,+F%C3%A1bio+Silva,+Tubar%C3%A3o+-+SC&output=embed"
+      loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+      title="Mapa da UBS Fábio Silva"></iframe>
+  </div>
+
+  <a class="lnk" href="https://maps.app.goo.gl/np4QbUTAV5NUutV48" target="_blank" rel="noopener"
+     style="background:var(--lil-cl);border-color:var(--rx2)">
+    <span class="e">🗺️</span>
+    <span class="c"><b>Abrir no meu aplicativo de mapas</b>
+      <span>Traçar rota até a unidade</span></span>
+    <span class="seta">›</span>
+  </a>
+
+  <div class="sec">Onde buscar informação confiável</div>
+
+  <a class="lnk" href="https://bvsms.saude.gov.br/bvs/publicacoes/guia_alimentar_crianca_brasileira_versao_resumida.pdf"
+     target="_blank" rel="noopener">
+    <span class="e">📘</span>
+    <span class="c"><b>Guia Alimentar para Crianças Menores de 2 Anos</b>
+      <span>Ministério da Saúde · versão resumida (PDF)</span></span>
+    <span class="seta">›</span>
+  </a>
+
+  <div class="lnk" style="cursor:default">
+    <span class="e">📒</span>
+    <span class="c"><b>Caderneta da Criança</b>
+      <span>Leve em todas as consultas e vacinas</span></span>
+  </div>
+
+  <a class="lnk" href="tel:+554836219556">
+    <span class="e">🏥</span>
+    <span class="c"><b>A equipe da unidade</b>
+      <span>Tire suas dúvidas aqui · toque para ligar</span></span>
+    <span class="seta">›</span>
+  </a>
+
+  <div class="fx f-r" style="margin-top:6px"><span class="e">🚫</span>
+    <div class="c"><b>Desconfie de "pitacos"</b>
+      <span>Nem tudo o que se ouve é verdade. Na dúvida, pergunte à equipe.</span></div></div>
+
+  <div class="fo">
+    Material educativo — <b>Mostra PMSUS 2026.2</b><br>
+    TURMA 49B · UNISUL · UBS Fábio Silva<br>
+    Não substitui a avaliação profissional.
+  </div>
+</section>
+
+<!-- ══════════ RODAPÉ FIXO ══════════ -->
+<div class="nv">
+  <button class="n-volta" id="bk" onclick="vt()">‹ Voltar</button>
+  <button class="n-inicio" onclick="ir('t0')">🏠 Início</button>
+</div>
+
+</div>
+
+<script>
+var h=[],T={
+ t0:'Amamentação',t1:'Os primeiros dias',t2:'Mitos e verdades',
+ t3:'A pega',t4:'Quanto o bebê mama',t5:'Quando dói',
+ t6:'Tirar o leite',t7:'O sono do bebê',t8:'Quando o leite volta',
+ t9:'Álcool e remédios',t10:'Fórmula infantil',t11:'A comida chega',
+ t12:'Procure a UBS',t13:'Contato'};
+function ir(id,s){
+  var a=document.querySelector('.tl.on');
+  if(a&&!s&&a.id!==id)h.push(a.id);
+  var n=document.querySelectorAll('.tl');
+  for(var i=0;i<n.length;i++)n[i].classList.remove('on');
+  document.getElementById(id).classList.add('on');
+  document.getElementById('tt').innerHTML=T[id]+
+    '<small>Cultura, mitos e saberes</small>';
+  if(id==='t0'){document.getElementById('bk').classList.remove('on');h=[];}
+  else document.getElementById('bk').classList.add('on');
+  window.scrollTo(0,0);
+}
+function vt(){h.length?ir(h.pop(),1):ir('t0',1);}
+</script>
+</body>
+</html>
